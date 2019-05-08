@@ -34,17 +34,11 @@
 		?>
 
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'svine' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'svine' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'svine' ), 'svine', '<a href="http://kangabell.co">Kay Belardinelli</a>' );
-				?>
+			<?php
+			esc_html_e( 'All content', 'svine' );
+			echo ' &copy; ' . date('Y') . ' ';
+			bloginfo( 'name' );
+			?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
