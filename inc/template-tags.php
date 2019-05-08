@@ -24,11 +24,7 @@ if ( ! function_exists( 'svine_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'svine' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		$posted_on = sprintf( esc_html_x( '%s', 'post date', 'svine' ), $time_string);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
@@ -56,6 +52,7 @@ if ( ! function_exists( 'svine_entry_footer' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function svine_entry_footer() {
+
 		if ( 'vehicle' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'svine' ) );

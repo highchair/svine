@@ -23,7 +23,10 @@
 			<div class="entry-meta">
 				<?php
 				svine_posted_on();
-				svine_posted_by();
+				$categories_list = get_the_category_list( esc_html__( ', ', 'svine' ) );
+				if ( $categories_list ) {
+					printf( '<span class="cat-links"><strong>' . esc_html__( 'Category:', 'svine' ) . '</strong>' .  '%1$s' . '</span>', $categories_list ); // WPCS: XSS OK.
+				}
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
