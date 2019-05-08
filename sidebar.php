@@ -7,11 +7,21 @@
  * @package SVINE
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
+if ( is_active_sidebar( 'sidebar-default' ) || is_active_sidebar( 'sidebar-archive' ) ) :
 ?>
 
 <aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	<?php
+	if ( is_archive() ) {
+		dynamic_sidebar( 'sidebar-archive' );
+	} else {
+		dynamic_sidebar( 'sidebar-default' );
+	}
+	?>
 </aside><!-- #secondary -->
+
+<?php
+else :
+	return;
+endif;
+?>
