@@ -33,6 +33,8 @@
 		get_search_form();
 		?>
 
+		<?php dynamic_sidebar( 'footer' ); ?>
+
 		<div class="site-info">
 			<?php
 			esc_html_e( 'All content', 'svine' );
