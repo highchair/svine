@@ -73,6 +73,15 @@ if ( ! function_exists( 'svine_entry_footer' ) ) :
 			}
 		}
 
+		if ( 'vehicle' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'svine' ) );
+			if ( $tags_list ) {
+				/* translators: 1: list of tags. */
+				printf( '<span class="tags-links"><strong>' . esc_html__( 'Similar Vehicles: ', 'svine' ) .  '</strong>' . '%1$s' .'</span>', $tags_list ); // WPCS: XSS OK.
+			}
+		}
+
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link">';
 			comments_popup_link(
