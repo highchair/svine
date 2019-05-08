@@ -53,5 +53,7 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+if ( 'post' === get_post_type() ) {
+	get_sidebar();
+}
 get_footer();
