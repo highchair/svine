@@ -1,9 +1,4 @@
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-
 	ul {
 		display: none;
 		list-style: none;
@@ -68,12 +63,21 @@
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
 	}
-}
+} // .main-navigation
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+}
+
+@media screen and (max-width: 37.4em) {
+	.main-navigation > div {
+		position: absolute;
+		top: 3rem;
+		left: 0;
+		background: $color__background-body;
+	}
 }
 
 @media screen and (min-width: 37.5em) {

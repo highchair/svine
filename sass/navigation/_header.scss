@@ -1,0 +1,16 @@
+.site-header {
+	display: flex;
+	flex-wrap: wrap;
+	.site-branding {
+		flex: 1;
+	}
+	@media screen and (max-width: 37.4em) {
+		.search-form {
+			width: 100%;
+		}
+	}
+} // .site-header
+
+.site-title {
+	margin: 0;
+}
