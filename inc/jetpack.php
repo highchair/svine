@@ -51,7 +51,7 @@ function svine_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :
-			get_template_part( 'template-parts/content', 'search' );
+			get_template_part( 'template-parts/content', 'archive' );
 		else :
 			get_template_part( 'template-parts/content', get_post_type() );
 		endif;
