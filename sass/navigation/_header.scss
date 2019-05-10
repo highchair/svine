@@ -9,6 +9,14 @@
 			width: 100%;
 		}
 	}
+	@media screen and (min-width: 37.5em) {
+		align-items: center;
+		border-bottom: 1px solid $color__background-screen;
+		padding: ($padding / 2) $padding;
+		.site-branding img {
+			max-width: 20rem;
+		}
+	}
 } // .site-header
 
 .site-title {

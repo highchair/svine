@@ -45,6 +45,7 @@
 	}
 
 	li {
+		background: $color__background-body;
 		float: left;
 		position: relative;
 
@@ -55,6 +56,7 @@
 
 	a {
 		display: block;
+		padding: $padding / 2;
 		text-decoration: none;
 	}
 
@@ -64,6 +66,10 @@
 	.current-menu-ancestor > a {
 	}
 } // .main-navigation
+
+.nav-menu {
+	background: $color__background-body;
+}
 
 /* Small menu. */
 .menu-toggle,
@@ -76,7 +82,6 @@
 		position: absolute;
 		top: 3rem;
 		left: 0;
-		background: $color__background-body;
 	}
 }
 
