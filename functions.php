@@ -181,9 +181,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Add read-more link to excerpt
  */
 function svine_excerpt_more($more) {
-  global $post;
-  remove_filter('excerpt_more', 'new_excerpt_more');
-  return '&#8230; <a href="'. get_permalink($post->ID) . '">' . 'Continue Reading' . '</a>';
+	global $post;
+	remove_filter('excerpt_more', 'new_excerpt_more');
+	return '&#8230; <a href="'. get_permalink($post->ID) . '">' . 'Continue Reading' . '</a>';
 }
 add_filter('excerpt_more','svine_excerpt_more');
 
