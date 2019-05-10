@@ -18,10 +18,15 @@ get_header();
 			<header class="page-header">
 				<h1 class="page-title">
 					<?php
+					/* results count */
+					echo $wp_query->found_posts . ' ';
 					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'svine' ), '<span>' . get_search_query() . '</span>' );
+					printf( esc_html__( 'Results for: %s', 'svine' ), '<span>&quot;' . get_search_query() . '&quot;</span>' );
 					?>
 				</h1>
+				<?php
+				get_search_form();
+				?>
 			</header><!-- .page-header -->
 
 			<?php
