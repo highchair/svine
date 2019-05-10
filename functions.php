@@ -138,7 +138,7 @@ add_action( 'widgets_init', 'svine_widgets_init' );
  * Enqueue scripts and styles.
  */
 function svine_scripts() {
-	wp_enqueue_style( 'svine-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'svine-style', get_template_directory_uri() . '/css/style.css' );
 
 	wp_enqueue_script( 'svine-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
