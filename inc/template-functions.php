@@ -18,7 +18,7 @@ function svine_body_classes( $classes ) {
 	}
 
 	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	if ( ! is_active_sidebar( 'sidebar-default' ) || ! is_active_sidebar( 'sidebar-archive' ) ) {
 		$classes[] = 'no-sidebar';
 	}
 
