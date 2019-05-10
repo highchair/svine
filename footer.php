@@ -18,8 +18,7 @@
 			<?php the_custom_logo(); ?>
 		</div><!-- .site-branding -->
 
-		<nav class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'svine' ); ?></button>
+		<nav class="footer-navigation">
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
@@ -27,7 +26,7 @@
 				'depth'			 => 1
 			) );
 			?>
-		</nav><!-- .main-navigation -->
+		</nav><!-- .footer-navigation -->
 
 		<?php
 		get_search_form();
