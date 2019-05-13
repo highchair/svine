@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying results in search pages
+ * Template part for displaying results in search & archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -14,7 +14,11 @@
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php svine_post_thumbnail(); ?>
+	<?php
+	if ( 'vehicle' === get_post_type() ) {
+		svine_post_thumbnail();
+	}
+	?>
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
