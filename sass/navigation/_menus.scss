@@ -1,13 +1,8 @@
-.main-navigation ul,
-.footer-navigation ul {
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
-
 .main-navigation {
 	ul {
-		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
 	}
 	ul ul {
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -49,7 +44,6 @@
 
 	li {
 		background: $color__background-body;
-		float: left;
 		position: relative;
 
 		&:hover > a,
@@ -81,10 +75,16 @@
 }
 
 @media screen and (max-width: 37.4em) {
-	.main-navigation > div {
-		position: absolute;
-		top: 3rem;
-		left: 0;
+	.main-menu {
+		width: 100%;
+	}
+	.main-navigation .menu {
+		columns: 2;
+		text-align: center;
+	}
+	.footer-navigation {
+		margin-top: $padding;
+		margin-bottom: $padding;
 	}
 }
 
@@ -94,6 +94,9 @@
 	}
 	.main-navigation ul {
 		display: block;
+	}
+	.main-navigation li {
+		float: left;
 	}
 }
 
@@ -115,18 +118,5 @@
 		float: right;
 		text-align: right;
 		width: 50%;
-	}
-}
-
-.footer-navigation {
-	margin-top: $padding;
-	margin-bottom: $padding;
-	.menu {
-		columns: 2;
-		text-align: center;
-	}
-	a {
-		display: block;
-		padding: $padding / 2;
 	}
 }

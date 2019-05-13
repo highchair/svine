@@ -14,23 +14,27 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-branding">
-			<?php the_custom_logo(); ?>
-		</div><!-- .site-branding -->
 
-		<nav class="footer-navigation">
+		<nav class="footer-navigation main-navigation">
+
+			<div class="site-branding">
+				<?php the_custom_logo(); ?>
+			</div><!-- .site-branding -->
+
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
 				'menu_id'        => 'primary-menu',
+				'container_class'	 => 'main-menu',
 				'depth'			 => 1
 			) );
 			?>
-		</nav><!-- .footer-navigation -->
 
-		<?php
-		get_search_form();
-		?>
+			<?php
+			get_search_form();
+			?>
+
+		</nav><!-- .footer-navigation -->
 
 		<?php dynamic_sidebar( 'footer' ); ?>
 

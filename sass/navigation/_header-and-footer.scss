@@ -1,0 +1,51 @@
+.main-navigation {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.site-title {
+	margin: 0;
+}
+
+@media screen and (max-width: 37.4em) {
+	.main-navigation .search-form {
+		width: 100%;
+	}
+	.site-header { // modify header for menu toggle button
+		.main-navigation ul {
+			display: none;
+		}
+		.site-branding {
+			flex: 1;
+		}
+	}
+}
+
+@media screen and (min-width: 37.5em) {
+	.main-navigation {
+		align-items: center;
+		border-bottom: 1px solid $color__background-screen;
+		padding: ($padding / 2) $padding;
+	}
+	.site-branding {
+		flex: 1;
+		img {
+			max-width: 20rem;
+		}
+	}
+}
+
+.site-footer {
+	background: $color__background-screen;
+	padding: ($padding * 2) $padding;
+	.widget {
+		text-align: center;
+		margin-top: $padding * 2;
+		margin-bottom: $padding * 2;
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+	}
+} // .site-footer

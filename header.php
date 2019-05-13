@@ -25,33 +25,37 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'svine' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><?php the_custom_logo(); ?></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><?php the_custom_logo(); ?></p>
-				<?php
-			endif;
-			?>
-		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
+
+			<div class="site-branding">
+				<?php
+				if ( is_front_page() && is_home() ) :
+					?>
+					<h1 class="site-title"><?php the_custom_logo(); ?></h1>
+					<?php
+				else :
+					?>
+					<p class="site-title"><?php the_custom_logo(); ?></p>
+					<?php
+				endif;
+				?>
+			</div><!-- .site-branding -->
+
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'svine' ); ?></button>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
 				'menu_id'        => 'primary-menu',
+				'container_class'	 => 'main-menu'
 			) );
 			?>
-		</nav><!-- #site-navigation -->
 
-		<?php
-		get_search_form();
-		?>
+			<?php
+			get_search_form();
+			?>
+
+		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
