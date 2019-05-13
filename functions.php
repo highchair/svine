@@ -187,3 +187,16 @@ function svine_excerpt_more($more) {
 }
 add_filter('excerpt_more','svine_excerpt_more');
 
+/**
+ * Remove label/prefix from Category archive page title
+ */
+add_filter( 'get_the_archive_title', function ( $title ) {
+
+	if( is_category() ) {
+		$title = single_cat_title( '', false );
+	}
+
+	return $title;
+
+});
+
