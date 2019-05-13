@@ -21,6 +21,12 @@
 	?>
 
 	<div class="entry-summary">
-		<?php the_excerpt(); ?>
+		<?php
+		if ( is_search() && 'post' === get_post_type() ) {
+			echo svine_posted_on() . ' – ' . get_the_excerpt();
+		} else {
+			the_excerpt();
+		}
+		?>
 	</div><!-- .entry-summary -->
 </article><!-- #post-<?php the_ID(); ?> -->
