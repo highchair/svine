@@ -233,3 +233,26 @@ function svine_cpt_tags_archive( $query ) {
 	}
 }
 add_filter( 'pre_get_posts', 'svine_cpt_tags_archive' );
+
+
+/**
+ * Customize archive page titles
+ */
+
+add_filter( 'get_the_archive_title', function ( $title ) {
+
+	if ( is_post_type_archive() ) {
+
+		// don't prepend title
+		$title = post_type_archive_title('', false);
+
+	} elseif ( is_tag() ) {
+
+		// wrap prepended label for styling
+		$title = single_cat_title('<span>Tag:</span> ', false);
+
+	}
+
+	return $title;
+
+});
