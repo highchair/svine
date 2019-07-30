@@ -13,6 +13,13 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				the_content();
+			endwhile;
+			?>
+
 			<div>
 				<h2><?php esc_html_e( 'Our Recent Deliveries', 'svine' ); ?></h2>
 				<div>
@@ -40,5 +47,4 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
