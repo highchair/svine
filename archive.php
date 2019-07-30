@@ -7,6 +7,12 @@
  * @package SVINE
  */
 
+if ( is_post_type_archive('vehicle') ) {
+	$max_count = 9;
+} else {
+	$max_count = 12;
+}
+
 get_header();
 ?>
 
@@ -25,9 +31,17 @@ get_header();
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
+
 				the_post();
 
-				get_template_part( 'template-parts/content', 'archive' );
+				static $count = 0;
+
+				if ($count == $max_count) {
+					break;
+				} else {
+					get_template_part( 'template-parts/content', 'archive' );
+					$count++;
+				}
 
 			endwhile;
 
