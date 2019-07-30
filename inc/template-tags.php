@@ -53,7 +53,7 @@ if ( ! function_exists( 'svine_entry_footer' ) ) :
 	 */
 	function svine_entry_footer() {
 
-		if ( 'vehicle' === get_post_type() ) {
+		if ( 'delivery' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'svine' ) );
 			if ( $tags_list ) {

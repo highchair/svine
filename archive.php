@@ -7,7 +7,7 @@
  * @package SVINE
  */
 
-if ( is_post_type_archive('vehicle') ) {
+if ( is_post_type_archive('delivery') ) {
 	$max_count = 9;
 } else {
 	$max_count = 12;

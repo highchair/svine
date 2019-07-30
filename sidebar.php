@@ -12,8 +12,8 @@ if ( is_active_sidebar( 'sidebar-default' ) || is_active_sidebar( 'sidebar-archi
 
 <aside id="secondary" class="widget-area">
 	<?php
-	if ( is_post_type_archive('vehicle') ) {
-		dynamic_sidebar( 'sidebar-vehicles' );
+	if ( is_post_type_archive('delivery') ) {
+		dynamic_sidebar( 'sidebar-deliveries' );
 	}
 	elseif ( is_archive() || is_home() ) {
 		dynamic_sidebar( 'sidebar-archive' );
