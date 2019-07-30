@@ -24,7 +24,7 @@
 		<?php
 		if ( is_search() && 'post' === get_post_type() ) {
 			echo svine_posted_on() . ' – ' . get_the_excerpt();
-		} else {
+		} elseif ( is_home() ) {
 			the_excerpt();
 		}
 		?>
