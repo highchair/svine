@@ -112,7 +112,7 @@ if ( ! function_exists( 'svine_post_thumbnail' ) ) :
 			return;
 		}
 
-		if ( is_singular() ) :
+		if ( is_singular() && ! is_front_page() ) :
 			?>
 
 			<div class="post-thumbnail">
@@ -123,7 +123,7 @@ if ( ! function_exists( 'svine_post_thumbnail' ) ) :
 
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
+			the_post_thumbnail( 'medium_large', array(
 				'alt' => the_title_attribute( array(
 					'echo' => false,
 				) ),
