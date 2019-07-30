@@ -209,3 +209,27 @@ add_filter( 'get_the_archive_title', function ( $title ) {
 
 });
 
+/**
+ * Add custom post types to tags archive
+ * src: https://docs.pluginize.com/article/17-post-types-in-category-tag-archives
+ */
+
+function svine_cpt_tags_archive( $query ) {
+
+	if ( is_admin() || ! $query->is_main_query() ) {
+	return;
+	}
+
+	if ( is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
+	$cptui_post_types = cptui_get_post_type_slugs();
+
+	$query->set(
+		'post_type',
+		array_merge(
+			array( 'post' ),
+			$cptui_post_types
+		)
+	);
+	}
+}
+add_filter( 'pre_get_posts', 'svine_cpt_tags_archive' );
