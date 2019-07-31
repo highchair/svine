@@ -114,15 +114,6 @@ function svine_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Archive Sidebar', 'svine' ),
-		'id'            => 'sidebar-archive',
-		'description'   => esc_html__( 'Add widgets here.', 'svine' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
 		'name'          => esc_html__( 'Deliveries Archive Sidebar', 'svine' ),
 		'id'            => 'sidebar-deliveries',
 		'description'   => esc_html__( 'Add widgets here.', 'svine' ),

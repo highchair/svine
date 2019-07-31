@@ -14,9 +14,6 @@ if ( is_active_sidebar( 'sidebar-default' ) || is_active_sidebar( 'sidebar-archi
 	<?php
 	if ( is_post_type_archive('delivery') ) {
 		dynamic_sidebar( 'sidebar-deliveries' );
-	}
-	elseif ( is_archive() || is_home() ) {
-		dynamic_sidebar( 'sidebar-archive' );
 	} else {
 		dynamic_sidebar( 'sidebar-default' );
 	}
