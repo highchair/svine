@@ -197,11 +197,11 @@ function svine_excerpt_more($more) {
 add_filter('excerpt_more','svine_excerpt_more');
 
 /**
- * Remove label/prefix from Category archive page title
+ * Remove label/prefix from Category & Taxonomy archive page titles
  */
 add_filter( 'get_the_archive_title', function ( $title ) {
 
-	if( is_category() ) {
+	if( is_category() || is_tax() ) {
 		$title = single_cat_title( '', false );
 	}
 
