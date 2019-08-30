@@ -62,7 +62,7 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-if ( is_post_type_archive() ) {
+if ( is_post_type_archive() || is_tax() ) {
 	get_sidebar();
 }
 get_footer();

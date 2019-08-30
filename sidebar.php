@@ -12,7 +12,7 @@ if ( is_active_sidebar( 'sidebar-default' ) || is_active_sidebar( 'sidebar-archi
 
 <aside id="secondary" class="widget-area">
 	<?php
-	if ( is_post_type_archive('vehicle') ) {
+	if ( is_post_type_archive('vehicle') || is_tax() ) {
 		dynamic_sidebar( 'sidebar-vehicles' );
 	} else {
 		dynamic_sidebar( 'sidebar-default' );
