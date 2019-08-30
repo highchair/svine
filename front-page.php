@@ -25,12 +25,12 @@ get_header();
 			?>
 
 			<div>
-				<h2><?php esc_html_e( 'Our Recent Deliveries', 'svine' ); ?></h2>
+				<h2><?php esc_html_e( 'Our Recent Vehicles', 'svine' ); ?></h2>
 				<div>
 					<?php
 
 					$loop = new WP_Query( array(
-						'post_type' => 'delivery',
+						'post_type' => 'vehicle',
 						'posts_per_page' => 4, 
 						'ignore_sticky_posts'=>true
 					) );
@@ -44,7 +44,7 @@ get_header();
 					endwhile; wp_reset_postdata();
 					?>
 				</div>
-				<a class="button" href='<?php echo get_post_type_archive_link('delivery'); ?>'><?php esc_html_e( 'All Deliveries', 'svine' ); ?></a>
+				<a class="button" href='<?php echo get_post_type_archive_link('vehicle'); ?>'><?php esc_html_e( 'All Vehicles', 'svine' ); ?></a>
 			</div>
 
 		</main><!-- #main -->

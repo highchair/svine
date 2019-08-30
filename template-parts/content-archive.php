@@ -15,7 +15,7 @@
 	</header><!-- .entry-header -->
 
 	<?php
-	if ( is_home() || 'delivery' === get_post_type() ) {
+	if ( is_home() || 'vehicle' === get_post_type() ) {
 		svine_post_thumbnail();
 	}
 	?>
