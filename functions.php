@@ -149,6 +149,8 @@ add_action( 'widgets_init', 'svine_widgets_init' );
 function svine_scripts() {
 	wp_enqueue_style( 'svine-style', get_template_directory_uri() . '/css/style.css' );
 
+	wp_enqueue_style( 'svine-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i|Teko:500,700&display=swap', false );
+
 	wp_enqueue_script( 'svine-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'svine-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
