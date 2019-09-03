@@ -1,15 +1,48 @@
-h1, h2, h3, h4, h5, h6 {
-	clear: both;
-}
-
-h1, h2, h4, h5, h6 {
+h1, .h1 {
+	@include fluid-units( 'font-size', 2, 3.625 );
+	color: $red;
 	font-family: $font__alt;
-}
-
-h1, h6 {
+	line-height: $font__line-height-heading;
 	text-transform: uppercase;
 }
 
-h2, h5 {
+h2, .h2 {
+	@include fluid-units( 'font-size', 1.75, 3 );
+	color: $bluegray-dk;
+	line-height: $font__line-height-heading;
+	font-family: $font__alt;
 	font-weight: 500;
+}
+
+h3, .h3 {
+	@include fluid-units( 'font-size', 1.5625, 2.2 );
+	color: $bluegray;
+	line-height: $font__line-height-heading;
+}
+
+h4, .h4 {
+	@include fluid-units( 'font-size', 1.375, 2 );
+	color: $bluegray;
+	font-family: $font__alt;
+	font-weight: 400;
+	line-height: $font__line-height-heading;
+	letter-spacing: 0.03125em;
+}
+
+h5, .h5 {
+	@include fluid-units( 'font-size', 1.25, 1.62 );
+	color: $bluegray-dk;
+	font-family: $font__alt;
+	font-weight: 800;
+	letter-spacing: 0.03125em;
+	line-height: 1.33;
+}
+
+h6, .h6 {
+	@include fluid-units( 'font-size', 1.125, 1.37 );
+	color: $bluegray-lt;
+	font-family: $font__alt;
+	letter-spacing: 0.0625em;
+	line-height: 1.33;
+	text-transform: uppercase;
 }
