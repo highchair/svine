@@ -1,20 +1,31 @@
-$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;
+$bluegray: #4e5f73;
+$bluegray-dk: #2e3740;
+$bluegray-lt: #6180a6;
+$red: #b5161c;
+$cream: #efeadc;
 
-$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: royalblue;
-$color__link-visited: purple;
-$color__link-hover: midnightblue;
-$color__text-main: #404040;
+$white: #fdfefe;
+$silver: #e5e6e7;
+$gray: #959AA1;
+$black: #222222;
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
+$color__background-body: $white;
+$color__background-screen: $bluegray-dk;
+$color__background-hr: $silver;
+$color__background-button: $white;
+$color__background-pre: $white;
+$color__background-ins: $white;
+
+$color__text-screen: $black;
+$color__text-input: $black;
+$color__text-input-focus: $black;
+$color__link: $red;
+$color__link-visited: $red;
+$color__link-hover: darken($red, 10);
+$color__text-main: $black;
+
+$color__border-button: $bluegray-lt;
+$color__border-button-hover: $bluegray;
+$color__border-button-focus: $bluegray;
+$color__border-input: transparent;
+$color__border-abbr: $silver;
