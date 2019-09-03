@@ -20,9 +20,13 @@ get_header();
 				the_content();
 			endwhile;
 
-			dynamic_sidebar( 'callout' );
-
 			?>
+
+			<div class="callout">
+				<?php
+				dynamic_sidebar( 'callout' );
+				?>
+			</div>
 
 			<div>
 				<h2><?php esc_html_e( 'Our Recent Deliveries', 'svine' ); ?></h2>

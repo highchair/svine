@@ -7,6 +7,10 @@
 	margin: 0;
 }
 
+.site-header {
+	border-bottom: 5px solid $red;
+}
+
 @media screen and (max-width: 37.4em) {
 	.main-navigation .search-form {
 		width: 100%;
@@ -24,7 +28,7 @@
 @media screen and (min-width: 37.5em) {
 	.main-navigation {
 		align-items: center;
-		border-bottom: 1px solid $color__background-screen;
+		background: $color__background-screen;
 		padding: ($padding / 2) $padding;
 	}
 	.site-branding {
@@ -37,7 +41,14 @@
 
 .site-footer {
 	background: $color__background-screen;
+	color: $cream;
 	padding: ($padding * 2) $padding;
+	a {
+		color: $cream;
+	}
+	h2, h3, h4 {
+		color: $white;
+	}
 	.widget {
 		text-align: center;
 		margin-top: $padding * 2;

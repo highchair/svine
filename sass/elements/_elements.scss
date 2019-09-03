@@ -30,4 +30,13 @@ figure {
 	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
 
+.callout {
+	background: $color__background-screen;
+	border-bottom: 5px solid $red;
+	color: $white;
+	a {
+		color: $white;
+	}
+}
+
 @import "tables";

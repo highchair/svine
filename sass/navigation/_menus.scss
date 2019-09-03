@@ -43,15 +43,16 @@
 	}
 
 	li {
-		background: $color__background-body;
 		position: relative;
 
 		&:hover > a,
 		&.focus > a {
+			border-bottom: 2px solid $gray;
 		}
 	}
 
 	a {
+		color: $cream;
 		display: block;
 		padding: $padding / 2;
 		text-decoration: none;
@@ -61,12 +62,9 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		border-bottom: 2px solid $gray;
 	}
 } // .main-navigation
-
-.nav-menu {
-	background: $color__background-body;
-}
 
 /* Small menu. */
 .menu-toggle,
