@@ -1,61 +1,30 @@
+// Header & Footer
+
 .main-navigation {
 	font-family: $font__alt;
+	line-height: 1;
+
 	ul {
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
 	}
-	ul ul {
-		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-		float: left;
-		position: absolute;
-		top: 100%;
-		left: -999em;
-		z-index: 99999;
-
-		ul {
-			left: -999em;
-			top: 0;
-		}
-
-		li {
-			&:hover > ul,
-			&.focus > ul {
-				left: 100%;
-			}
-		}
-
-		a {
-			width: 200px;
-		}
-
-		:hover > a,
-		.focus > a {
-		}
-
-		a:hover,
-		a.focus {
-		}
-	}
 
 	li:hover > ul,
 	li.focus > ul {
-		left: auto;
+		left: 0;
 	}
 
 	li {
+		font-size: 1.5rem;
+		padding-left: $padding;
+		padding-right: $padding;
 		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-			border-bottom: 2px solid $gray;
-		}
 	}
 
 	a {
 		color: $cream;
 		display: block;
-		padding: $padding / 2;
 		text-decoration: none;
 	}
 
@@ -63,8 +32,47 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
-		border-bottom: 2px solid $gray;
+		border-bottom: 2px solid rgba($white, 0.4);
 	}
+
+	.menu {
+		height: 100%;
+		> li {
+			display: inline-flex;
+			flex-direction: column;
+			height: 100%;
+			justify-content: center;
+
+			&:hover > a,
+			&.focus > a {
+				border-bottom: 2px solid rgba($white, 0.4);
+			}
+		}
+	}
+
+	.sub-menu {
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+		min-width: 12rem;
+		position: absolute;
+		top: 100%;
+		left: -999em;
+		z-index: 99999;
+
+		li {
+			&:hover > ul,
+			&.focus > ul {
+				left: 100%;
+			}
+			a {
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+			}
+			+ li a {
+				border-top: 1px solid rgba($white, 0.5);
+			}
+		}
+	} // .sub-menu
+
 } // .main-navigation
 
 /* Small menu. */
@@ -94,10 +102,27 @@
 	.main-navigation ul {
 		display: block;
 	}
-	.main-navigation li {
-		float: left;
+}
+
+// Header
+
+.site-header .nav-menu > li {
+	display: inline-flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+
+	&:hover,
+	&.focus {
+		background: $red;
+		ul {
+			background: $red;
+		}
 	}
 }
+
+
+// Posts Navigation
 
 .comment-navigation,
 .posts-navigation,
