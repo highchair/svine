@@ -26,7 +26,7 @@
 
 	<header id="masthead" class="site-header">
 
-		<nav id="site-navigation" class="main-navigation">
+		<nav id="site-navigation" class="main-navigation wrap">
 
 			<div class="site-branding">
 				<?php
@@ -58,4 +58,4 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content wrap">

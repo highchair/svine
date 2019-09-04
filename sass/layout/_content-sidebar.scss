@@ -1,26 +1,26 @@
 @media screen and (min-width: 37.5em) {
 
-	.content-area {
-		float: left;
-		margin: 0 (-$size__site-sidebar) 0 0;
-		width: $size__site-main;
-	}
+	.blog,
+	.single-post,
+	.tax-vehicle_type {
 
-	.site-main {
-		margin: 0 $size__site-sidebar 0 0;
-	}
+		.page-header {
+			width: 100%;
+		}
 
-	.site-content .widget-area {
-		float: right;
-		overflow: hidden;
-		width: $size__site-sidebar;
-	}
+		.content-area {
+			display: flex;
+			flex-wrap: wrap;
+		}
 
-	.site-footer {
-		clear: both;
-		width: $size__site-main;
+		.site-main {
+			flex: 1;
+		}
+
+		.site-content .widget-area {
+			width: $size__site-sidebar;
+		}
+
 	}
 
 }
-
-@import "no-sidebar";

@@ -11,6 +11,32 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
+
+
+		<header class="page-header">
+			<?php
+			if ( is_singular() ) :
+				the_title( '<h1 class="page-title">', '</h1>' );
+			else :
+				the_title( '<h2 class="page-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			endif;
+
+			svine_post_thumbnail();
+
+			if ( 'post' === get_post_type() ) :
+				?>
+				<div class="entry-meta">
+					<?php
+					svine_posted_on();
+					$categories_list = get_the_category_list( esc_html__( ', ', 'svine' ) );
+					if ( $categories_list ) {
+						printf( '<span class="cat-links"><strong>' . esc_html__( 'Category:', 'svine' ) . '</strong>' .  '%1$s' . '</span>', $categories_list ); // WPCS: XSS OK.
+					}
+					?>
+				</div><!-- .entry-meta -->
+			<?php endif; ?>
+		</header><!-- .page-header -->
+
 		<main id="main" class="site-main">
 
 		<?php
@@ -50,10 +76,13 @@ get_header();
 		?>
 
 		</main><!-- #main -->
+
+		<?php
+		if ( 'post' === get_post_type() ) {
+			get_sidebar();
+		}
+		?>
 	</div><!-- #primary -->
 
 <?php
-if ( 'post' === get_post_type() ) {
-	get_sidebar();
-}
 get_footer();
