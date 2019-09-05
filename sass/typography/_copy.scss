@@ -1,4 +1,5 @@
 p {
+	@include fluid-units( 'font-size', 1, 1.125 );
 	margin-bottom: 1.5em;
 }
 

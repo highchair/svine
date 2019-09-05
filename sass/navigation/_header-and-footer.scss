@@ -65,4 +65,27 @@
 			padding: 0;
 		}
 	}
+	@media screen and (min-width: 37.5em) {
+		.wrap {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.main-navigation,
+		.site-info {
+			width: 100%;
+		}
+		.widget {
+			flex: 1;
+			&:nth-of-type(odd) {
+				text-align: left;
+			}
+			&:nth-of-type(even) {
+				text-align: right;
+			}
+		}
+		.site-info {
+			text-align: right;
+		}
+	}
 } // .site-footer

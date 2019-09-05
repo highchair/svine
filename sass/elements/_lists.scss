@@ -10,6 +10,10 @@ ol {
 	list-style: decimal;
 }
 
+li {
+	@include fluid-units( 'font-size', 1, 1.125 );
+}
+
 li > ul,
 li > ol {
 	margin-bottom: 0;
