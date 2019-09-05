@@ -29,15 +29,15 @@ get_header();
 
 				svine_post_thumbnail();
 			?>
-				<div class="entry-meta">
+				<p class="entry-meta">
 					<?php
 					svine_posted_on();
 					$categories_list = get_the_category_list( esc_html__( ', ', 'svine' ) );
 					if ( $categories_list ) {
-						printf( '<span class="cat-links"><strong>' . esc_html__( 'Category:', 'svine' ) . '</strong>' .  '%1$s' . '</span>', $categories_list ); // WPCS: XSS OK.
+						printf( '<span class="cat-links"><strong>' . esc_html__( 'Category: ', 'svine' ) . '</strong>' .  '%1$s' . '</span>', $categories_list ); // WPCS: XSS OK.
 					}
 					?>
-				</div><!-- .entry-meta -->
+				</p><!-- .entry-meta -->
 			<?php
 			endif;
 
@@ -52,7 +52,7 @@ get_header();
 			?>
 				<div class="nav-previous">
 					<h3><?php esc_html_e( 'Previous', 'svine' ); ?></h3>
-					<?php previous_post_link( '%link' ); ?>
+					<p><?php previous_post_link( '%link' ); ?></p>
 				</div>
 			<?php
 			endif;
@@ -62,7 +62,7 @@ get_header();
 			?>
 				<div class="nav-next">
 					<h3><?php esc_html_e( 'Next', 'svine' ); ?></h3>
-					<?php next_post_link( '%link' ); ?>
+					<p><?php next_post_link( '%link' ); ?></p>
 				</div>
 			<?php
 			endif;

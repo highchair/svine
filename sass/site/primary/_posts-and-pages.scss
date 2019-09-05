@@ -31,6 +31,9 @@
 
 // Sidebar
 .widget-area {
+	.h6 {
+		margin-top: 0;
+	}
 	a {
 		text-decoration: none;
 	}
@@ -49,4 +52,13 @@
 	a {
 		color: $bluegray;
 	}
+}
+
+// Metadata
+.entry-meta {
+	border-bottom: 1px solid $bluegray-lt;
+	padding-bottom: $padding * 2;
+}
+.cat-links {
+	margin-left: $padding / 2;
 }

@@ -132,6 +132,26 @@
 		margin: 0 0 1.5em;
 		overflow: hidden;
 	}
+}
+
+.post-navigation {
+	border-top: 2px solid $silver;
+	border-bottom: 2px solid $silver;
+	h3 {
+		@extend .h6;
+		color: $red;
+		margin-bottom: 0;
+	}
+	p {
+		margin-top: 0;
+	}
+	a {
+		color: $bluegray;
+		text-decoration: none;
+	}
+}
+
+@media screen and (min-width: 37.5em) {
 
 	.nav-previous {
 		float: left;
@@ -142,5 +162,9 @@
 		float: right;
 		text-align: right;
 		width: 50%;
+		.nav-previous + & {
+			border-left: 2px solid $silver;
+		}
 	}
+
 }

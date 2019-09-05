@@ -26,7 +26,7 @@ if ( ! function_exists( 'svine_posted_on' ) ) :
 
 		$posted_on = sprintf( esc_html_x( '%s', 'post date', 'svine' ), $time_string);
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+		echo '<span class="posted-on">' . $posted_on . '.</span>'; // WPCS: XSS OK.
 
 	}
 endif;
