@@ -31,6 +31,9 @@
 	.site-header .main-navigation {
 		height: 6.125rem;
 	}
+	.main-navigation .search-form {
+		margin-left: $padding;
+	}
 	.main-menu {
 		align-self: stretch;
 	}

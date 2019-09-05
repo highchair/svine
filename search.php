@@ -24,9 +24,6 @@ get_header();
 					printf( esc_html__( 'Results for: %s', 'svine' ), '<span>&quot;' . get_search_query() . '&quot;</span>' );
 					?>
 				</h1>
-				<?php
-				get_search_form();
-				?>
 			</header><!-- .page-header -->
 
 			<?php

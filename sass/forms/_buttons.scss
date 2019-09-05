@@ -6,7 +6,7 @@ input[type="submit"] {
 	border: 3px solid;
 	border-color: $color__border-button;
 	color: $color__border-button;
-	@include font-size(0.75);
+	cursor: pointer;
 	line-height: 1;
 	padding: .6em 1em .4em;
 	text-decoration: none;
@@ -20,5 +20,10 @@ input[type="submit"] {
 	&:focus {
 		color: $color__border-button-focus;
 		border-color: $color__border-button-focus;
+	}
+
+	&.icon-button {
+		background: none;
+		border: 0;
 	}
 }
