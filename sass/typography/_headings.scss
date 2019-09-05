@@ -12,6 +12,8 @@ h2, .h2 {
 	line-height: $font__line-height-heading;
 	font-family: $font__alt;
 	font-weight: 500;
+	margin-bottom: 0.5em;
+	text-transform: none;
 }
 
 h3, .h3 {
@@ -42,6 +44,7 @@ h6, .h6 {
 	@include fluid-units( 'font-size', 1.125, 1.37 );
 	color: $bluegray-lt;
 	font-family: $font__alt;
+	font-weight: 800;
 	letter-spacing: 0.0625em;
 	line-height: 1.33;
 	text-transform: uppercase;

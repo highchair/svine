@@ -15,16 +15,20 @@ get_header();
 
 		<header class="page-header">
 			<?php
-			if ( is_singular() ) :
-				the_title( '<h1 class="page-title">', '</h1>' );
-			else :
-				the_title( '<h2 class="page-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			endif;
+			the_title( '<h1 class="page-title">', '</h1>' );
+			?>
+		</header><!-- .page-header -->
 
-			svine_post_thumbnail();
+		<main id="main" class="site-main">
+
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
 			if ( 'post' === get_post_type() ) :
-				?>
+
+				svine_post_thumbnail();
+			?>
 				<div class="entry-meta">
 					<?php
 					svine_posted_on();
@@ -34,14 +38,8 @@ get_header();
 					}
 					?>
 				</div><!-- .entry-meta -->
-			<?php endif; ?>
-		</header><!-- .page-header -->
-
-		<main id="main" class="site-main">
-
-		<?php
-		while ( have_posts() ) :
-			the_post();
+			<?php
+			endif;
 
 			get_template_part( 'template-parts/content', get_post_type() );
 
