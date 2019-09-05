@@ -21,3 +21,10 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.page-title {
+	text-align: center;
+	span {
+		color: $bluegray;
+	}
+}

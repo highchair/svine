@@ -199,12 +199,21 @@ function svine_excerpt_more($more) {
 add_filter('excerpt_more','svine_excerpt_more');
 
 /**
- * Remove label/prefix from Category & Taxonomy archive page titles
+ * Customize archive page titles
+ * Remove prefix from some, wrap non-prefix part of title in some others
  */
 add_filter( 'get_the_archive_title', function ( $title ) {
 
-	if( is_category() || is_tax() ) {
+	if ( is_category() || is_tax('vehicle_type') ) {
 		$title = single_cat_title( '', false );
+	} elseif( is_tax('location') ) {
+		$title = sprintf( __( 'Location: <span>%s</span>' ), single_cat_title( '', false ) );
+	} elseif( is_tax('model') ) {
+		$title = sprintf( __( 'Model: <span>%s</span>' ), single_cat_title( '', false ) );
+	} elseif ( is_tag() ) {
+		$title = sprintf( __( 'Tag: <span>%s</span>' ), single_tag_title( '', false ) );
+	} elseif ( is_post_type_archive() ) {
+		$title = post_type_archive_title( '', false );
 	}
 
 	return $title;
@@ -235,26 +244,3 @@ function svine_cpt_tags_archive( $query ) {
 	}
 }
 add_filter( 'pre_get_posts', 'svine_cpt_tags_archive' );
-
-
-/**
- * Customize archive page titles
- */
-
-add_filter( 'get_the_archive_title', function ( $title ) {
-
-	if ( is_post_type_archive() ) {
-
-		// don't prepend title
-		$title = post_type_archive_title('', false);
-
-	} elseif ( is_tag() ) {
-
-		// wrap prepended label for styling
-		$title = single_cat_title('<span>Tag:</span> ', false);
-
-	}
-
-	return $title;
-
-});
