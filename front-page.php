@@ -25,26 +25,36 @@ get_header();
 			?>
 
 			<div>
-				<h2><?php esc_html_e( 'Our Recent Vehicles', 'svine' ); ?></h2>
+				<h2><?php esc_html_e( 'Our Recent Deliveries', 'svine' ); ?></h2>
 				<div>
 					<?php
 
 					$loop = new WP_Query( array(
 						'post_type' => 'vehicle',
-						'posts_per_page' => 4, 
-						'ignore_sticky_posts'=>true
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'vehicle_type',
+								'field'    => 'slug',
+								'terms'    => 'deliveries',
+							),
+						),
+						'posts_per_page' => 4
 					) );
 
-					while ($loop->have_posts()) : 
+					if ( $loop->have_posts() ) {
+						while ( $loop->have_posts() ) {
+							$loop->the_post();
+							get_template_part( 'template-parts/content', 'archive' );
+						}
+					}
 
-						$loop->the_post();
+					wp_reset_postdata();
 
-						get_template_part( 'template-parts/content', 'archive' );
-
-					endwhile; wp_reset_postdata();
 					?>
 				</div>
-				<a class="button" href='<?php echo get_post_type_archive_link('vehicle'); ?>'><?php esc_html_e( 'All Vehicles', 'svine' ); ?></a>
+				<a class="button" href="<?php echo get_term_link('deliveries', 'vehicle_type'); ?>">
+					<?php esc_html_e( 'All Deliveries', 'svine' ); ?>
+				</a>
 			</div>
 
 		</main><!-- #main -->
