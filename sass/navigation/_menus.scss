@@ -168,3 +168,40 @@
 	}
 
 }
+
+
+// Pagination
+
+.nav-links {
+	margin-bottom: $padding * 4;
+	margin-top: $padding * 4;
+	text-align: center;
+}
+
+.page-numbers {
+	@include button(1px solid);
+	@include fluid-units( 'font-size', 1.375, 2 );
+	align-items: center;
+	color: $bluegray-dk;
+	display: inline-flex;
+	height: 3rem;
+	justify-content: center;
+	padding-top: 0.15em;
+	width: 3rem;
+
+	&.next,
+	&.prev {
+		border-color: transparent;
+	}
+
+	&:hover,
+	&:focus {
+		background: $color__link;
+		border-color: $color__link;
+		color: $white;
+	}
+
+	+ .page-numbers {
+		margin-left: $padding * 0.75;
+	}
+}
