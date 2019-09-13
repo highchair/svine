@@ -1,15 +1,11 @@
-a.button,
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 3px solid;
-	border-color: $color__border-button;
+@mixin button($border: 3px solid $color__border-button) {
+	border: $border;
 	color: $color__border-button;
 	cursor: pointer;
+	font-family: $font__alt;
 	line-height: 1;
-	padding: .6em 1em .4em;
 	text-decoration: none;
+	text-transform: uppercase;
 
 	&:hover {
 		border-color: $color__border-button-hover;
@@ -21,9 +17,22 @@ input[type="submit"] {
 		color: $color__border-button-focus;
 		border-color: $color__border-button-focus;
 	}
+}
 
-	&.icon-button {
-		background: none;
-		border: 0;
-	}
+
+a.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	@include button();
+	@include fluid-units( 'font-size', 1.25, 1.625 );
+	font-weight: bold;
+	letter-spacing: 0.0315em;
+	padding: .6em 1em .4em;
+}
+
+a.icon-button {
+	background: none;
+	border: 0;
 }
