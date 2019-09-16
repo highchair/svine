@@ -54,6 +54,10 @@ big {
 	font-size: 125%;
 }
 
+small {
+	@include fluid-units( 'font-size', 0.85, 1 );
+}
+
 .cat-links strong {
 	@include fluid-units( 'font-size', 1, 1.375 );
 	color: $bluegray-dk;

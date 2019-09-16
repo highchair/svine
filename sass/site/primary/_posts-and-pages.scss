@@ -62,3 +62,50 @@
 .cat-links {
 	margin-left: $padding / 2;
 }
+
+.posted-on {
+	display: inline;
+	+ p {
+		display: inline;
+	}
+}
+
+// hEntry
+.hentry {
+	@include clearfix;
+	@include clearfix-after;
+	width: 100%;
+	display: block;
+
+	.h4 {
+		margin-top: 0;
+	}
+
+	a {
+		color: $bluegray-dk;
+		text-decoration: none;
+	}
+
+	&:hover,
+	&:focus {
+		.h4,
+		a {
+			color: $black;
+		}
+	}
+}
+
+// Search Results
+.search-results .type-vehicle {
+	a {
+		align-items: flex-start;
+		display: flex;
+	}
+	img {
+		margin-right: $padding * 2;
+		width: 10rem;
+	}
+	p {
+		@include fluid-units( 'font-size', 0.85, 1 );
+	}
+}
