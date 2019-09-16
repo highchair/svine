@@ -7,6 +7,12 @@
  * @package SVINE
  */
 
+if ( is_post_type_archive() || is_tax('vehicle_type') ) {
+	$max_count = 9;
+} else {
+	$max_count = 12;
+}
+
 get_header();
 ?>
 
@@ -31,9 +37,9 @@ get_header();
 
 				static $count = 0;
 
-				if ( $count == 9 ) {
+				if ( $count == $max_count ) {
 					break;
-				} elseif ( $count == 0 ) {
+				} elseif ( $count == 0 && ( is_post_type_archive() || is_tax('vehicle_type') ) ) {
 			?>
 				<article <?php post_class(); ?>>
 					<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
@@ -70,7 +76,7 @@ get_header();
 		</main><!-- #main -->
 
 		<?php
-		if ( is_post_type_archive() || is_tax() ) {
+		if ( is_post_type_archive() || is_tax('vehicle_type') ) {
 			get_sidebar();
 		}
 		?>

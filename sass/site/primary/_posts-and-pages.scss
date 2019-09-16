@@ -101,9 +101,13 @@
 	}
 }
 
-// Vehicle & Vehicle-Type Archives
+
+// Vehicle & Taxonomy Archives
+
 .post-type-archive-vehicle,
-.tax-vehicle_type {
+.tax-vehicle_type,
+.tax-model,
+.tax-location {
 
 	.site-main {
 		display: flex;
@@ -112,6 +116,14 @@
 
 	.hentry {
 		text-align: center;
+	}
+}
+
+// Vehicle & Vehicle-Type Archives
+.post-type-archive-vehicle,
+.tax-vehicle_type {
+
+	.hentry {
 		width: calc(50% - #{($padding)});
 
 		&:first-of-type {
@@ -123,6 +135,29 @@
 
 		&:nth-of-type(2n + 2) {
 			margin-right: $padding * 2;
+		}
+	}
+}
+
+
+// Other Vehicle Taxonomy Archives
+.tax-model .hentry,
+.tax-location .hentry {
+	margin-right: $padding;
+	width: calc(50% - #{($padding)});
+
+	@media screen and (max-width: 37.4em) {
+		&:nth-of-type(2n) {
+			margin-right: 0;
+		}
+	}
+
+	@media screen and (min-width: 37.5em) {
+		margin-right: $padding * 2;
+		width: calc(33% - #{($padding * 2)});
+
+		&:nth-of-type(3n) {
+			margin-right: 0;
 		}
 	}
 }
