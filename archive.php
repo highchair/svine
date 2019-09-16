@@ -35,7 +35,7 @@ get_header();
 					break;
 				} elseif ( $count == 0 ) {
 			?>
-				<article <?php post_class('first'); ?>>
+				<article <?php post_class(); ?>>
 					<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 						<?php
 						svine_post_thumbnail( 'full' );

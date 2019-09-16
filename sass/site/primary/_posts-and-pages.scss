@@ -24,8 +24,14 @@
 
 .page-title {
 	text-align: center;
+
 	span {
 		color: $bluegray;
+	}
+
+	@media screen and (min-width: 37.5em) {
+		margin-top: $padding * 4;
+		margin-bottom: $padding * 4;
 	}
 }
 
@@ -73,7 +79,8 @@
 // hEntry
 .hentry {
 	h2 {
-		margin-top: 0;
+		color: $bluegray;
+		margin-top: $padding / 2;
 	}
 
 	a {
@@ -81,9 +88,13 @@
 		text-decoration: none;
 	}
 
+	img {
+		display: block;
+	}
+
 	&:hover,
 	&:focus {
-		.h4,
+		h2,
 		a {
 			color: $black;
 		}
@@ -93,25 +104,32 @@
 // Vehicle & Vehicle-Type Archives
 .post-type-archive-vehicle,
 .tax-vehicle_type {
+
 	.site-main {
 		display: flex;
 		flex-wrap: wrap;
 	}
+
 	.hentry {
-		margin-right: $padding * 2;
-		width: calc(50% - #{($padding * 2)});
-	}
-	.first {
-		width: 100%;
-		.hentry {
-			margin-right: 0;
-			width: auto;
+		text-align: center;
+		width: calc(50% - #{($padding)});
+
+		&:first-of-type {
+			width: 100%;
+			h2 {
+				margin-top: $padding;
+			}
+		}
+
+		&:nth-of-type(2n + 2) {
+			margin-right: $padding * 2;
 		}
 	}
 }
 
 // Search Results
 .search-results {
+
 	.site-content {
 		max-width: $size__site-narrow;
 	}
