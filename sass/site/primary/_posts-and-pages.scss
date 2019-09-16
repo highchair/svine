@@ -96,16 +96,22 @@
 }
 
 // Search Results
-.search-results .type-vehicle {
-	a {
-		align-items: flex-start;
-		display: flex;
+.search-results {
+	.site-content {
+		max-width: $size__site-narrow;
 	}
-	img {
-		margin-right: $padding * 2;
-		width: 10rem;
-	}
-	p {
-		@include fluid-units( 'font-size', 0.85, 1 );
+
+	.type-vehicle {
+		a {
+			align-items: flex-start;
+			display: flex;
+		}
+		img {
+			margin-right: $padding * 2;
+			width: 10rem;
+		}
+		p {
+			@include fluid-units( 'font-size', 0.85, 1 );
+		}
 	}
 }

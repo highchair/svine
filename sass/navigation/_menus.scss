@@ -195,7 +195,8 @@
 	}
 
 	&:hover,
-	&:focus {
+	&:focus,
+	&.current {
 		background: $color__link;
 		border-color: $color__link;
 		color: $white;
