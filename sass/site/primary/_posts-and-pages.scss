@@ -72,12 +72,7 @@
 
 // hEntry
 .hentry {
-	@include clearfix;
-	@include clearfix-after;
-	width: 100%;
-	display: block;
-
-	.h4 {
+	h2 {
 		margin-top: 0;
 	}
 
@@ -95,10 +90,36 @@
 	}
 }
 
+// Vehicle Archive
+.post-type-archive-vehicle {
+	.site-main {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.hentry {
+		margin-right: $padding * 2;
+		width: calc(50% - #{($padding * 2)});
+	}
+	.first {
+		width: 100%;
+		.hentry {
+			margin-right: 0;
+			width: auto;
+		}
+	}
+}
+
 // Search Results
 .search-results {
 	.site-content {
 		max-width: $size__site-narrow;
+	}
+
+	.hentry {
+		@include clearfix;
+		@include clearfix-after;
+		width: 100%;
+		display: block;
 	}
 
 	.type-vehicle {

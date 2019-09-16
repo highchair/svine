@@ -106,7 +106,7 @@ if ( ! function_exists( 'svine_post_thumbnail' ) ) :
 	 *
 	 * Wraps the post thumbnail in a div element when on single views.
 	 */
-	function svine_post_thumbnail() {
+	function svine_post_thumbnail( $size = 'post-thumbnail' ) {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -115,18 +115,16 @@ if ( ! function_exists( 'svine_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail( $size ); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php
 		else :
-
-		the_post_thumbnail( 'medium', array(
-			'alt' => the_title_attribute( array(
-				'echo' => false,
-			) ),
-		) );
-
-		endif; // End is_singular().
+			the_post_thumbnail( $size, array(
+				'alt' => the_title_attribute( array(
+					'echo' => false,
+				) ),
+			) );
+		endif;
 	}
 endif;

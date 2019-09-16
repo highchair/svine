@@ -13,7 +13,7 @@
 	<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 		<?php
 		if ( 'vehicle' === get_post_type() ) {
-			svine_post_thumbnail();
+			svine_post_thumbnail( 'medium' );
 		}
 		?>
 		<div>

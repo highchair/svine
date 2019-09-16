@@ -29,7 +29,28 @@ get_header();
 
 				the_post();
 
-				get_template_part( 'template-parts/content', 'archive' );
+				static $count = 0;
+
+				if ( $count == 9 ) {
+					break;
+				} elseif ( $count == 0 ) {
+			?>
+				<article <?php post_class('first'); ?>>
+					<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+						<?php
+						svine_post_thumbnail( 'full' );
+
+						the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+						?>
+					</a>
+				</article>
+			<?php
+				$count++;
+
+				} else {
+					get_template_part( 'template-parts/content', 'archive' );
+					$count++;
+				}
 
 			endwhile;
 
