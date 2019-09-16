@@ -90,8 +90,9 @@
 	}
 }
 
-// Vehicle Archive
-.post-type-archive-vehicle {
+// Vehicle & Vehicle-Type Archives
+.post-type-archive-vehicle,
+.tax-vehicle_type {
 	.site-main {
 		display: flex;
 		flex-wrap: wrap;

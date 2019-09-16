@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying post archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -29,28 +29,7 @@ get_header();
 
 				the_post();
 
-				static $count = 0;
-
-				if ( $count == 9 ) {
-					break;
-				} elseif ( $count == 0 ) {
-			?>
-				<article <?php post_class('first'); ?>>
-					<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-						<?php
-						svine_post_thumbnail( 'full' );
-
-						the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-						?>
-					</a>
-				</article>
-			<?php
-				$count++;
-
-				} else {
-					get_template_part( 'template-parts/content', 'archive' );
-					$count++;
-				}
+				get_template_part( 'template-parts/content', 'archive' );
 
 			endwhile;
 
