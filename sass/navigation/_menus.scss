@@ -129,7 +129,7 @@
 	border-top: 2px solid $silver;
 	border-bottom: 2px solid $silver;
 	max-width: $size__site-narrow;
-	margin: 0 auto $padding * 2;
+	margin: $padding * 4 auto;
 	width: 100%;
 
 	h3 {
@@ -146,22 +146,18 @@
 	}
 }
 
-@media screen and (min-width: 37.5em) {
+.nav-previous {
+	float: left;
+	width: 50%;
+}
 
-	.nav-previous {
-		float: left;
-		width: 50%;
+.nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+	.nav-previous + & {
+		border-left: 2px solid $silver;
 	}
-
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-		.nav-previous + & {
-			border-left: 2px solid $silver;
-		}
-	}
-
 }
 
 
