@@ -223,3 +223,9 @@ div.ngg-galleryoverview {
 .ngg-gallery-thumbnail-box {
 	margin: $padding / 2;
 }
+
+
+// Basic Page
+.page .site-content {
+	max-width: $size__site-narrow;
+}
