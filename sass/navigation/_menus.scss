@@ -124,19 +124,14 @@
 
 // Posts Navigation
 
-.comment-navigation,
-.posts-navigation,
 .post-navigation {
-
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
-}
-
-.post-navigation {
+	@include clearfix;
 	border-top: 2px solid $silver;
 	border-bottom: 2px solid $silver;
+	max-width: $size__site-narrow;
+	margin: 0 auto $padding * 2;
+	width: 100%;
+
 	h3 {
 		@extend .h6;
 		color: $red;

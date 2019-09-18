@@ -41,7 +41,7 @@ get_header();
 					break;
 				} elseif ( $count == 0 && ( is_post_type_archive() || is_tax('vehicle_type') ) ) {
 			?>
-				<article <?php post_class(); ?>>
+				<article <?php post_class('card'); ?>>
 					<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 						<?php
 						svine_post_thumbnail( 'full' );

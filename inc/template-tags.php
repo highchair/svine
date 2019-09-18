@@ -53,13 +53,27 @@ if ( ! function_exists( 'svine_entry_footer' ) ) :
 	 */
 	function svine_entry_footer() {
 
-		if ( 'delivery' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'svine' ) );
-			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links"><strong>' . esc_html__( 'Similar Vehicles: ', 'svine' ) .  '</strong>' . '%1$s' .'</span>', $tags_list ); // WPCS: XSS OK.
+		if ( 'vehicle' === get_post_type() ) {
+
+			echo '<p class="term-links">';
+
+			$location_list = get_the_term_list( $post->ID, 'location', '<strong>Location</strong>: ', ', ', '<br />' );
+			$model_list = get_the_term_list( $post->ID, 'model', '<strong>Model</strong>: ', ', ', '<br />' );
+			$tag_list = get_the_tag_list( '<strong>Tags</strong>: ', ', ' );
+
+			if ( $location_list ) {
+				echo $location_list;
 			}
+
+			if ( $model_list ) {
+				echo $model_list;
+			}
+
+			if ( $tag_list ) {
+				echo $tag_list;
+			}
+
+			echo '</p>';
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
@@ -81,23 +95,7 @@ if ( ! function_exists( 'svine_entry_footer' ) ) :
 			echo '</span>';
 		}
 
-		edit_post_link(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'svine' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			),
-			'<span class="edit-link">',
-			'</span>'
-		);
-	}
+	} // end svine_entry_footer()
 endif;
 
 if ( ! function_exists( 'svine_post_thumbnail' ) ) :

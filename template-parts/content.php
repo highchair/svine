@@ -30,10 +30,10 @@
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'svine' ),
 			'after'  => '</div>',
 		) );
+
+		svine_entry_footer();
 		?>
+
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php svine_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

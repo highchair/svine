@@ -9,7 +9,7 @@
 
 ?>
 
-<article <?php post_class(); ?>>
+<article <?php post_class('card'); ?>>
 	<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 		<?php
 		if ( is_home() || 'vehicle' === get_post_type() ) {
