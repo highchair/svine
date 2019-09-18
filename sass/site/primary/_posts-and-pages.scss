@@ -227,7 +227,7 @@ div.ngg-galleryoverview {
 
 
 // Basic Page
-.page .site-content {
+.page-template-default .site-content {
 	max-width: $size__site-narrow;
 }
 
@@ -251,4 +251,36 @@ div.ngg-galleryoverview {
 	h2 {
 		margin-bottom: $padding * 2;
 	}
-}
+
+	@media screen and ($medium-up) {
+
+		> div {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.card {
+			margin-right: $padding * 2;
+			width: calc(50% - #{($padding * 1.5)});
+
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	@media screen and ($large-up) {
+
+		.card {
+			width: calc(25% - #{($padding * 1.5)});
+
+			&:nth-of-type(2n) {
+				margin-right: $padding * 2;
+			}
+
+			&:nth-of-type(4n) {
+				margin-right: 0;
+			}
+		}
+	}
+}  // .recent-deliveries
