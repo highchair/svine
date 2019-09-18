@@ -13,7 +13,7 @@
 	border-bottom: 5px solid $red;
 }
 
-@media screen and (max-width: 37.4em) {
+@media screen and ($medium-down) {
 	.main-navigation .search-form {
 		width: 100%;
 	}
@@ -27,7 +27,7 @@
 	}
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and ($large-up) {
 	.site-header .main-navigation {
 		height: 6.125rem;
 	}
@@ -60,7 +60,7 @@
 		margin-top: $padding * 2;
 		margin-bottom: $padding * 2;
 	}
-	@media screen and (min-width: 37.5em) {
+	@media screen and ($large-up) {
 		.wrap {
 			display: flex;
 			flex-wrap: wrap;

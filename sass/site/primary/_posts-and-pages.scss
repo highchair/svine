@@ -23,7 +23,7 @@
 		color: $bluegray;
 	}
 
-	@media screen and (min-width: 37.5em) {
+	@media screen and ($large-up) {
 		margin-top: $padding * 3;
 		margin-bottom: $padding * 3;
 	}
@@ -141,13 +141,13 @@
 	margin-right: $padding;
 	width: calc(50% - #{($padding)});
 
-	@media screen and (max-width: 37.4em) {
+	@media screen and ($medium-down) {
 		&:nth-of-type(2n) {
 			margin-right: 0;
 		}
 	}
 
-	@media screen and (min-width: 37.5em) {
+	@media screen and ($large-up) {
 		margin-right: $padding * 2;
 		width: calc(33% - #{($padding * 2)});
 
