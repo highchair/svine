@@ -56,7 +56,7 @@ get_header();
 
 					?>
 				</div>
-				<a class="button" href="<?php echo get_term_link('deliveries', 'vehicle_type'); ?>">
+				<a class="button cta" href="<?php echo get_term_link('deliveries', 'vehicle_type'); ?>">
 					<?php esc_html_e( 'All Deliveries', 'svine' ); ?>
 				</a>
 			</div>

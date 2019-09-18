@@ -29,10 +29,38 @@ input[type="submit"] {
 	@include fluid-units( 'font-size', 1.25, 1.625 );
 	font-weight: bold;
 	letter-spacing: 0.0315em;
-	padding: .6em 1em .4em;
+	padding: 1.1rem 1.5rem 1rem;
 }
 
 a.icon-button {
 	background: none;
 	border: 0;
+}
+
+.button.cta {
+	background: $color__background-body;
+	display: table;
+	margin: $padding * 3 auto;
+	position: relative;
+
+	&:after {
+		background: $bluegray-lt;
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		bottom: -4px;
+		right: -4px;
+		z-index: -1;
+	}
+
+	&:hover,
+	&:focus {
+		transform: translate(4px, 4px);
+
+		&:after {
+			bottom: 0;
+			right: 0;
+		}
+	}
 }
