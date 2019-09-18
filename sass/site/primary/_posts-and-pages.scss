@@ -120,11 +120,12 @@
 	.card {
 		width: calc(50% - #{($padding)});
 
+		h3 {
+			margin-top: $padding;
+		}
+
 		&:first-of-type {
 			width: 100%;
-			h2 {
-				margin-top: $padding;
-			}
 		}
 
 		&:nth-of-type(2n + 2) {
@@ -228,4 +229,17 @@ div.ngg-galleryoverview {
 // Basic Page
 .page .site-content {
 	max-width: $size__site-narrow;
+}
+
+
+// Front Page / Homepage
+
+// compensate for padding
+.home .site-main > *[class*="wp-block-"],
+.home .callout {
+	margin-left: -$padding;
+	margin-right: -$padding;
+	min-width: 100%;
+	padding: $padding;
+	width: auto;
 }
