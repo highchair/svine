@@ -28,13 +28,6 @@
 		text-decoration: none;
 	}
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-		border-bottom: 2px solid rgba($white, 0.4);
-	}
-
 	.menu {
 		height: 100%;
 		> li {
@@ -44,7 +37,9 @@
 			justify-content: center;
 
 			&:hover > a,
-			&.focus > a {
+			&.focus > a,
+			&.current_page_item > a,
+			&.current-menu-item > a {
 				border-bottom: 2px solid rgba($white, 0.4);
 			}
 		}
