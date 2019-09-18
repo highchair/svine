@@ -46,7 +46,7 @@ get_header();
 						<?php
 						svine_post_thumbnail( 'full' );
 
-						the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+						the_title( sprintf( '<h3><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
 						?>
 					</a>
 				</article>

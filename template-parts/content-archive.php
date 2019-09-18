@@ -16,7 +16,7 @@
 			svine_post_thumbnail( 'medium_large' );
 		}
 
-		the_title( sprintf( '<h2>', esc_url( get_permalink() ) ), '</h2>' );
+		the_title( sprintf( '<h3 class="h4">', esc_url( get_permalink() ) ), '</h3>' );
 
 		if ( is_home() ) {
 			the_excerpt();

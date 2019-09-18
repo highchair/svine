@@ -28,7 +28,7 @@ get_header();
 				?>
 			</div>
 
-			<div>
+			<div class="recent-deliveries">
 				<h2><?php esc_html_e( 'Our Recent Deliveries', 'svine' ); ?></h2>
 				<div>
 					<?php

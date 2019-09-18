@@ -243,3 +243,12 @@ div.ngg-galleryoverview {
 	padding: $padding;
 	width: auto;
 }
+
+.recent-deliveries {
+	padding-top: $padding * 2;
+	text-align: center;
+
+	h2 {
+		margin-bottom: $padding * 2;
+	}
+}
