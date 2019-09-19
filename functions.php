@@ -41,6 +41,7 @@ if ( ! function_exists( 'svine_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'medium_wide', 768, 420, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -189,12 +190,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Add read-more link to excerpt
+ * Remove brackets from ellipsis on excerpt
  */
 function svine_excerpt_more($more) {
 	global $post;
 	remove_filter('excerpt_more', 'new_excerpt_more');
-	return '&#8230; <a href="'. get_permalink($post->ID) . '">' . 'Continue Reading' . '</a>';
+	return '&#8230;';
 }
 add_filter('excerpt_more','svine_excerpt_more');
 
