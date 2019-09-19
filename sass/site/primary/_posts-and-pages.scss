@@ -306,3 +306,16 @@ div.ngg-galleryoverview {
 		}
 	}
 }  // .recent-deliveries
+
+
+// 404 Page
+@media screen and ($large-up) {
+	.error404 {
+
+		.site-content {
+			min-height: 24rem;
+			text-align: center;
+		}
+
+	}
+}
