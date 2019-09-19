@@ -176,8 +176,17 @@
 	.card {
 		@include clearfix;
 		@include clearfix-after;
+		margin-bottom: $padding * 2;
 		width: 100%;
 		display: block;
+
+		.h4 {
+			margin: 0;
+		}
+
+		p {
+			margin: 0;
+		}
 	}
 
 	.type-vehicle {
