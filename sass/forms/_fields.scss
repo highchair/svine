@@ -18,6 +18,7 @@ textarea {
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
 	padding: 3px;
+	transition: all 0.125s;
 
 	&:focus {
 		background: $white;

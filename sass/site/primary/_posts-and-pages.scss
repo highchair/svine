@@ -31,17 +31,25 @@
 
 // Sidebar
 .widget-area {
+
 	.h6 {
 		margin-top: 0;
 	}
+
 	a {
 		text-decoration: none;
 	}
+
 	li > a {
-		color: $color__text-main;
+		color: $bluegray;
 		display: block;
 		padding-top: 0.25em;
 		padding-bottom: 0.25em;
+
+		&:hover,
+		&:focus {
+			color: $black;
+		}
 	}
 } // .widget-area
 
@@ -72,9 +80,10 @@
 
 // Cards
 .card {
-	h2 {
+	h3 {
 		color: $bluegray;
 		margin-top: $padding / 2;
+		transition: all 0.15s;
 	}
 
 	a {
@@ -88,7 +97,7 @@
 
 	&:hover,
 	&:focus {
-		h2,
+		h3,
 		a {
 			color: $black;
 		}
@@ -223,6 +232,10 @@ div.ngg-galleryoverview {
 
 .ngg-gallery-thumbnail-box {
 	margin: $padding / 2;
+}
+
+.ngg-gallery-thumbnail img {
+	transition: all 0.15s;
 }
 
 

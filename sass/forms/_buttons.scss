@@ -42,6 +42,7 @@ a.icon-button {
 	display: table;
 	margin: $padding * 3 auto;
 	position: relative;
+	transition: none;
 
 	&:after {
 		background: $bluegray-lt;

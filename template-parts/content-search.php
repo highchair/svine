@@ -18,7 +18,7 @@
 		?>
 		<div>
 			<?php
-			the_title( sprintf( '<h2 class="h4">', esc_url( get_permalink() ) ), '</h2>' );
+			the_title( '<h3 class="h4">', '</h3>' );
 
 			if ( 'post' === get_post_type() ) :
 				echo svine_posted_on() . ' – ';

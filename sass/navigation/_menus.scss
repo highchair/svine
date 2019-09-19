@@ -26,6 +26,11 @@
 		color: $cream;
 		display: block;
 		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $white;
+		}
 	}
 
 	.menu {
@@ -36,11 +41,15 @@
 			height: 100%;
 			justify-content: center;
 
+			> a {
+				border-bottom: 2px solid transparent;
+			}
+
 			&:hover > a,
 			&.focus > a,
 			&.current_page_item > a,
 			&.current-menu-item > a {
-				border-bottom: 2px solid rgba($white, 0.4);
+				border-color: rgba($white, 0.4);
 			}
 		}
 	}
@@ -106,9 +115,11 @@
 	flex-direction: column;
 	height: 100%;
 	justify-content: center;
+	transition: all 0.125s;
 
 	&:hover,
-	&.focus {
+	&:focus,
+	&:active {
 		background: $red;
 		ul {
 			background: $red;
@@ -132,12 +143,19 @@
 		color: $red;
 		margin-bottom: 0;
 	}
+
 	p {
 		margin-top: 0;
 	}
+
 	a {
 		color: $bluegray;
 		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $black;
+		}
 	}
 }
 
