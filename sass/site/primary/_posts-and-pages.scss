@@ -250,6 +250,14 @@ div.ngg-galleryoverview {
 }
 
 
+// Single Post
+.single-post h1 {
+	@extend .h2;
+	color: $red;
+	margin-bottom: $padding * 3;
+}
+
+
 // Basic Page
 .page-template-default .site-content {
 	max-width: $size__site-narrow;
