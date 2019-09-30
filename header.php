@@ -28,19 +28,17 @@
 
 		<nav id="site-navigation" class="main-navigation wrap">
 
-			<div class="site-branding">
-				<?php
-				if ( is_front_page() && is_home() ) :
-					?>
-					<h1 class="site-title"><?php the_custom_logo(); ?></h1>
-					<?php
-				else :
-					?>
-					<p class="site-title"><?php the_custom_logo(); ?></p>
-					<?php
-				endif;
+			<?php
+			if ( is_front_page() && is_home() ) :
 				?>
-			</div><!-- .site-branding -->
+				<h1 class="site-branding"><a href="<?php echo home_url(); ?>"><?php include get_stylesheet_directory() . '/img/logo-badge.svg'; ?></a></h1>
+				<?php
+			else :
+				?>
+				<p class="site-branding"><a href="<?php echo home_url(); ?>"><?php include get_stylesheet_directory() . '/img/logo-badge.svg'; ?></a></p>
+				<?php
+			endif;
+			?>
 
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'svine' ); ?></button>
 			<?php

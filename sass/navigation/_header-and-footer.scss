@@ -4,8 +4,12 @@
 	flex-wrap: wrap;
 }
 
-.site-title {
+.site-branding {
 	margin: 0;
+
+	a {
+		width: 9rem;
+	}
 }
 
 .site-header {
