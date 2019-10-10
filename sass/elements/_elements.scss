@@ -31,19 +31,12 @@ figure {
 	margin: 0;
 }
 
-.callout,
 .wp-block-cover {
-	margin-left: -($padding / 2);
-	margin-right: -($padding / 2);
-	width: auto; // reset
-
-	@media screen and ($xlarge-up) {
-		margin-left: calc(-100vw / 2 + #{$size__site-main} / 2);
-		margin-right: calc(-100vw / 2 + #{$size__site-main} / 2);
-	}
+	@include full-width;
 }
 
 .callout {
+	@include full-width;
 	background: $color__background-screen;
 	border-bottom: 5px solid $red;
 	color: $white;
@@ -83,5 +76,43 @@ figure {
 		}
 	}
 } // .callout
+
+.pullquote {
+	@include full-width;
+	background: $silver;
+	padding-top: $padding * 4;
+	padding-bottom: $padding * 4;
+
+	h2 {
+		border-bottom: 2px solid $red;
+		color: $bluegray;
+		display: table;
+		padding-left: $padding * 3;
+		padding-right: $padding * 3;
+		padding-bottom: $padding;
+		margin-top: 0;
+
+		&.has-text-align-center {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	.wp-block-pullquote {
+		@include center-block;
+		border-left: 0;
+		max-width: 57rem;
+		padding: 0;
+	}
+
+	p {
+		@include fluid-units( 'font-size', 1.25, 1.62 );
+		color: $bluegray-dk;
+	}
+
+	cite {
+		@include fluid-units( 'font-size', 1.25, 1.625 );
+	}
+} // .pullquote
 
 @import "tables";

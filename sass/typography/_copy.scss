@@ -3,7 +3,7 @@ p {
 	margin-bottom: 1.5em;
 }
 
-dfn, cite, em, i {
+dfn, em, i {
 	font-style: italic;
 }
 
@@ -13,11 +13,34 @@ strong {
 }
 
 blockquote {
-	border-left: 5px solid $red;
 	color: $bluegray;
-	font-family: "Georgia", "Times New Roman", Times, serif;
+	font-family: $font__serif;
 	margin: 0;
+}
+
+.wp-block-pullquote {
+	border-left: 5px solid $red;
 	padding-left: $padding * 2.25;
+}
+
+cite {
+	font-family: $font__alt;
+	font-weight: bold;
+	font-style: normal;
+	letter-spacing: 0.03125em;
+	position: relative;
+	text-transform: uppercase;
+
+	&::before {
+		content: '\201C'; // open curly quote
+		display: inline-block;
+		font-family: "Times New Roman", serif;
+		font-size: 2em;
+		height: 1em;
+		margin-right: 0.125em;
+		overflow-y: hidden;
+		vertical-align: -0.265em;
+	}
 }
 
 address {
@@ -70,4 +93,10 @@ small {
 	font-family: $font__alt;
 	font-weight: 400;
 	letter-spacing: 0.0625em;
+}
+
+.wp-block-separator {
+	background: $red;
+	height: 3px;
+	width: 50vw;
 }

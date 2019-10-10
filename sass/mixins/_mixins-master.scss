@@ -6,9 +6,20 @@
 
 // Center block
 @mixin center-block {
-	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+// Full-width block
+@mixin full-width() {
+  margin-left: -($padding / 2);
+  margin-right: -($padding / 2);
+  width: auto; // reset
+
+  @media screen and ($xlarge-up) {
+    margin-left: calc(-100vw / 2 + #{$size__site-main} / 2);
+    margin-right: calc(-100vw / 2 + #{$size__site-main} / 2);
+  }
 }
 
 // Wrapper block
