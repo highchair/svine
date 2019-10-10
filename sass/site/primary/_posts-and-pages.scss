@@ -267,7 +267,6 @@ div.ngg-galleryoverview {
 // Front Page / Homepage
 
 // compensate for padding
-.home .site-main > *[class*="wp-block-"],
 .home .callout {
 	margin-left: -$padding;
 	margin-right: -$padding;
@@ -275,6 +274,41 @@ div.ngg-galleryoverview {
 	padding: $padding;
 	width: auto;
 }
+
+.home .wp-block-cover {
+	border-bottom: 5px solid $red;
+	padding-top: $padding * 10;
+	padding-bottom: $padding * 10;
+
+	.wp-block-cover__inner-container {
+		background: rgba($red, 0.8);
+		box-shadow: 0 $padding/2 $padding/2 rgba($black, 0.75);
+		max-width: 57rem;
+		padding: $padding * 2;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.has-large-font-size {
+		border-bottom: 2px solid $silver;
+		color: $silver;
+		letter-spacing: 0.03125em;
+		line-height: 1;
+		margin-bottom: $padding;
+		padding-bottom: $padding;
+		text-shadow: 0.0em 0.075em 0.15em rgba($black, 0.75);
+		text-transform: uppercase;
+
+		+ p {
+			@include fluid-units( 'font-size', 1.125, 1.37 );
+			padding-left: $padding;
+			padding-right: $padding;
+			text-shadow: 0em 0.2em 0.275em rgba($black, 0.75);
+		}
+	}
+} // .home .wp-block-cover
 
 .recent-deliveries {
 	padding-top: $padding * 2;

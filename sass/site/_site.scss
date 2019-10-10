@@ -3,6 +3,11 @@
 	max-width: $size__site-main;
 }
 
+// hide overflow from full-width sections
+.site {
+	overflow-x: hidden;
+}
+
 @import "../layout/content-sidebar";
 
 /*--------------------------------------------------------------
