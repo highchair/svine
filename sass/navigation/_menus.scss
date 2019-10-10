@@ -55,6 +55,7 @@
 	}
 
 	.sub-menu {
+		background: $red;
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 		min-width: 12rem;
 		position: absolute;
@@ -110,6 +111,12 @@
 
 // Header
 
+.site-header .sub-menu {
+	background: $red;
+	opacity: 0;
+	transition: opacity 0.125s;
+}
+
 .site-header .nav-menu > li {
 	display: inline-flex;
 	flex-direction: column;
@@ -121,11 +128,12 @@
 	&:focus,
 	&:active {
 		background: $red;
-		ul {
-			background: $red;
+
+		.sub-menu {
+			opacity: 1;
 		}
 	}
-}
+} // .site-header .nav-menu > li
 
 
 // Posts Navigation
