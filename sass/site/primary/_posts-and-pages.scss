@@ -266,15 +266,6 @@ div.ngg-galleryoverview {
 
 // Front Page / Homepage
 
-// compensate for padding
-.home .callout {
-	margin-left: -$padding;
-	margin-right: -$padding;
-	min-width: 100%;
-	padding: $padding;
-	width: auto;
-}
-
 .home .wp-block-cover {
 	border-bottom: 5px solid $red;
 	padding-top: $padding * 10;

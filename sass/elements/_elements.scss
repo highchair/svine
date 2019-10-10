@@ -31,15 +31,7 @@ figure {
 	margin: 0;
 }
 
-.callout {
-	background: $color__background-screen;
-	border-bottom: 5px solid $red;
-	color: $white;
-	a {
-		color: $white;
-	}
-}
-
+.callout,
 .wp-block-cover {
 	margin-left: -($padding / 2);
 	margin-right: -($padding / 2);
@@ -50,5 +42,46 @@ figure {
 		margin-right: calc(-100vw / 2 + #{$size__site-main} / 2);
 	}
 }
+
+.callout {
+	background: $color__background-screen;
+	border-bottom: 5px solid $red;
+	color: $white;
+
+	a,
+	.widget-title {
+		color: $white;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.widget-title,
+	.textwidget {
+		flex: 50%;
+	}
+
+	.widget {
+		@include wrap();
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.textwidget {
+		@include fluid-units( 'font-size', 1.25, 1.62 );
+		align-content: center;
+		display: flex;
+		flex-wrap: wrap;
+		font-family: $font__alt;
+		justify-content: space-around;
+		letter-spacing: 0.0625em;
+		text-align: center;
+
+		div {
+
+		}
+	}
+} // .callout
 
 @import "tables";
