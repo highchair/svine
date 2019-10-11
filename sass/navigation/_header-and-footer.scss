@@ -50,7 +50,8 @@
 }
 
 .site-footer {
-	background: $color__background-screen;
+	background-image: linear-gradient($black, $color__background-screen, $color__background-screen);
+	border-top: 5px solid $red;
 	color: $cream;
 	padding: ($padding * 2) $padding;
 	a {
