@@ -53,28 +53,34 @@
 	background-image: linear-gradient($black, $color__background-screen, $color__background-screen);
 	border-top: 5px solid $red;
 	color: $cream;
-	padding: ($padding * 2) $padding;
+	padding: $padding $padding ($padding * 2);
+
 	a {
 		color: $cream;
 	}
+
 	h2, h3, h4 {
 		color: $white;
 	}
+
 	.widget {
 		text-align: center;
-		margin-top: $padding * 2;
-		margin-bottom: $padding * 2;
+		margin-top: $padding;
+		margin-bottom: $padding;
 	}
+
 	@media screen and ($large-up) {
 		.wrap {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
 		}
+
 		.main-navigation,
 		.site-info {
 			width: 100%;
 		}
+
 		.widget {
 			flex: 1;
 			&:nth-of-type(odd) {
@@ -84,6 +90,7 @@
 				text-align: right;
 			}
 		}
+
 		.site-info {
 			text-align: right;
 		}
