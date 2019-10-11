@@ -25,6 +25,10 @@ img {
 	border: 2px solid $bluegray-dk;
 	height: auto; /* Make sure images are scaled correctly. */
 	max-width: 100%; /* Adhere to container width. */
+
+	.no-border & {
+		border: 0;
+	}
 }
 
 figure {
