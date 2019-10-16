@@ -80,12 +80,6 @@
 
 } // .main-navigation
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
 @media screen and ($medium-down) {
 	.main-menu {
 		width: 100%;

@@ -40,20 +40,31 @@
 			endif;
 			?>
 
-			<button class="menu-toggle icon-button" aria-controls="primary-menu" aria-expanded="false">
+			<button class="menu-toggle icon-button" aria-controls="mobile-menu" aria-expanded="false">
 				<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'svine' ); ?></span>
 			</button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-				'container_class'	 => 'main-menu'
-			) );
-			?>
+			<div id="mobile-nav">
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'mobile-menu',
+					'depth'		 	 => 0
+				) );
+				get_search_form();
+				?>
+			</div>
 
-			<?php
-			get_search_form();
-			?>
+			<div class="desktop-nav">
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+					'container_class'	 => 'main-menu'
+				) );
+
+				get_search_form();
+				?>
+			</div>
 
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
