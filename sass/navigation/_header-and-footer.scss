@@ -1,5 +1,4 @@
 .main-navigation {
-	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -32,6 +31,9 @@
 }
 
 @media screen and ($large-up) {
+	.main-navigation {
+		align-items: center;
+	}
 	.site-header .main-navigation {
 		height: 6.125rem;
 	}
@@ -46,6 +48,18 @@
 		img {
 			max-width: 20rem;
 		}
+	}
+}
+
+button.menu-toggle {
+	background-color: $black;
+	background-image: url('../img/navicon.svg');
+	background-repeat: no-repeat;
+	height: 4rem;
+	width: 4rem;
+
+	.toggled & {
+		background-image: url('../img/close-x.svg');
 	}
 }
 

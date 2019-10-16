@@ -40,7 +40,9 @@
 			endif;
 			?>
 
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'svine' ); ?></button>
+			<button class="menu-toggle icon-button" aria-controls="primary-menu" aria-expanded="false">
+				<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'svine' ); ?></span>
+			</button>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
