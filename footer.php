@@ -13,12 +13,12 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer"><div class="wrap">
 
 		<nav class="footer-navigation main-navigation">
 
 			<div class="site-branding">
-				<?php the_custom_logo(); ?>
+				<a href="<?php echo home_url(); ?>"><?php include get_stylesheet_directory() . '/img/logo-badge.svg'; ?></a>
 			</div><!-- .site-branding -->
 
 			<?php
@@ -45,7 +45,7 @@
 			bloginfo( 'name' );
 			?>
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	</div></footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

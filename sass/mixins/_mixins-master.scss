@@ -6,9 +6,34 @@
 
 // Center block
 @mixin center-block {
-	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+// Full-width block
+@mixin full-width() {
+  margin-left: -($padding / 2);
+  margin-right: -($padding / 2);
+  width: auto; // reset
+
+  @media screen and ($xlarge-up) {
+    margin-left: calc(-100vw / 2 + #{$size__site-main} / 2);
+    margin-right: calc(-100vw / 2 + #{$size__site-main} / 2);
+  }
+}
+
+// Wrapper block
+@mixin wrap() {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $size__site-main;
+  padding-left: $padding / 2;
+  padding-right: $padding / 2;
+
+  @media screen and ($xlarge-up) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 // Clearfix
@@ -26,4 +51,34 @@
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+// Fluid units
+
+@function fluid-calc($min-value, $max-value, $min-vw: 30, $max-vw: 75, $unit: 1rem) {
+  @return calc(#{$min-value * $unit} + (#{$max-value} - #{$min-value}) * ((100vw - #{$min-vw * $unit}) / #{$max-vw - $min-vw}));
+}
+
+@mixin fluid-units($properties, $min-value, $max-value, $min-vw: 30, $max-vw: 75, $unit: 1rem, $mobile: true) {
+
+  /// Mobile-first: declare the $min-value as the default for any property passed
+  @if ($mobile == true) {
+    @each $property in $properties {
+      #{$property}: #{$min-value * $unit};
+    }
+  }
+
+  /// Now declare the creamy, fluid center using a media query at the min-width
+  @media (min-width: #{$min-vw * $unit}) {
+    @each $property in $properties {
+      #{$property}: fluid-calc($min-value, $max-value, $min-vw, $max-vw, $unit);
+    }
+  }
+
+  /// Finally, stop the crazy fluidity and set the max value at the max viewport width
+  @media (min-width: #{$max-vw * $unit}) {
+    @each $property in $properties {
+      #{$property}: #{$max-value * $unit};
+    }
+  }
 }

@@ -1,26 +1,29 @@
-@media screen and (min-width: 37.5em) {
+@media screen and ($large-up) {
 
-	.content-area {
-		float: left;
-		margin: 0 (-$size__site-sidebar) 0 0;
-		width: $size__site-main;
-	}
+	.blog,
+	.single-post,
+	.post-type-archive,
+	.tax-vehicle_type {
 
-	.site-main {
-		margin: 0 $size__site-sidebar 0 0;
-	}
+		.page-header {
+			width: 100%;
+		}
 
-	.site-content .widget-area {
-		float: right;
-		overflow: hidden;
-		width: $size__site-sidebar;
-	}
+		.content-area {
+			display: flex;
+			flex-wrap: wrap;
+		}
 
-	.site-footer {
-		clear: both;
-		width: $size__site-main;
+		.site-main {
+			flex: 1;
+			padding-bottom: $padding * 8;
+		}
+
+		.widget-area {
+			width: $size__site-sidebar;
+			margin-left: $padding * 4;
+		}
+
 	}
 
 }
-
-@import "no-sidebar";

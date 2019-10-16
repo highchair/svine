@@ -1,13 +1,23 @@
 .main-navigation {
+	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.site-title {
+.site-branding {
 	margin: 0;
+
+	a {
+		width: 9rem;
+	}
 }
 
-@media screen and (max-width: 37.4em) {
+.site-header {
+	background: $color__background-screen;
+	border-bottom: 5px solid $red;
+}
+
+@media screen and ($medium-down) {
 	.main-navigation .search-form {
 		width: 100%;
 	}
@@ -21,11 +31,15 @@
 	}
 }
 
-@media screen and (min-width: 37.5em) {
-	.main-navigation {
-		align-items: center;
-		border-bottom: 1px solid $color__background-screen;
-		padding: ($padding / 2) $padding;
+@media screen and ($large-up) {
+	.site-header .main-navigation {
+		height: 6.125rem;
+	}
+	.main-navigation .search-form {
+		margin-left: $padding;
+	}
+	.main-menu {
+		align-self: stretch;
 	}
 	.site-branding {
 		flex: 1;
@@ -36,16 +50,49 @@
 }
 
 .site-footer {
-	background: $color__background-screen;
-	padding: ($padding * 2) $padding;
+	background-image: linear-gradient($black, $color__background-screen, $color__background-screen);
+	border-top: 5px solid $red;
+	color: $cream;
+	padding: $padding $padding ($padding * 2);
+
+	a {
+		color: $cream;
+	}
+
+	h2, h3, h4 {
+		color: $white;
+	}
+
 	.widget {
 		text-align: center;
-		margin-top: $padding * 2;
-		margin-bottom: $padding * 2;
-		ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
+		margin-top: $padding;
+		margin-bottom: $padding;
+	}
+
+	@media screen and ($large-up) {
+		.wrap {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+		.main-navigation,
+		.site-info {
+			width: 100%;
+		}
+
+		.widget {
+			flex: 1;
+			&:nth-of-type(odd) {
+				text-align: left;
+			}
+			&:nth-of-type(even) {
+				text-align: right;
+			}
+		}
+
+		.site-info {
+			text-align: right;
 		}
 	}
 } // .site-footer

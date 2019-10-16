@@ -24,9 +24,6 @@ get_header();
 					printf( esc_html__( 'Results for: %s', 'svine' ), '<span>&quot;' . get_search_query() . '&quot;</span>' );
 					?>
 				</h1>
-				<?php
-				get_search_form();
-				?>
 			</header><!-- .page-header -->
 
 			<?php
@@ -39,11 +36,15 @@ get_header();
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'archive' );
+				get_template_part( 'template-parts/content', 'search' );
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_pagination( array(
+				'mid_size'  => 3,
+				'prev_text' => __( '<span aria-hidden="true">&lt;</span><span class="screen-reader-text">Previous Page</span>', 'svine' ),
+				'next_text' => __( '<span class="screen-reader-text">Next Page</span><span aria-hidden="true">&gt;</span>', 'svine' )
+			) );
 
 		else :
 

@@ -20,11 +20,15 @@ get_header();
 				the_content();
 			endwhile;
 
-			dynamic_sidebar( 'callout' );
-
 			?>
 
-			<div>
+			<div class="callout">
+				<?php
+				dynamic_sidebar( 'callout' );
+				?>
+			</div>
+
+			<div class="recent-deliveries">
 				<h2><?php esc_html_e( 'Our Recent Deliveries', 'svine' ); ?></h2>
 				<div>
 					<?php
@@ -52,7 +56,7 @@ get_header();
 
 					?>
 				</div>
-				<a class="button" href="<?php echo get_term_link('deliveries', 'vehicle_type'); ?>">
+				<a class="button cta" href="<?php echo get_term_link('deliveries', 'vehicle_type'); ?>">
 					<?php esc_html_e( 'All Deliveries', 'svine' ); ?>
 				</a>
 			</div>

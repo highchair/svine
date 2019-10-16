@@ -41,6 +41,7 @@ if ( ! function_exists( 'svine_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'medium_wide', 768, 420, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -59,26 +60,9 @@ if ( ! function_exists( 'svine_setup' ) ) :
 			'caption',
 		) );
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'svine_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 200,
-			'width'       => 800,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
 	}
 endif;
 add_action( 'after_setup_theme', 'svine_setup' );
@@ -110,7 +94,7 @@ function svine_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'svine' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2 class="widget-title h6">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
@@ -119,7 +103,7 @@ function svine_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'svine' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
+		'before_title'  => '<h2 class="widget-title h6">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
@@ -137,7 +121,7 @@ function svine_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'svine' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title">',
+		'before_title'  => '<h3 class="widget-title h6">',
 		'after_title'   => '</h3>',
 	) );
 }
@@ -149,6 +133,8 @@ add_action( 'widgets_init', 'svine_widgets_init' );
 function svine_scripts() {
 	wp_enqueue_style( 'svine-style', get_template_directory_uri() . '/css/style.css' );
 
+	wp_enqueue_style( 'svine-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i|Teko:500,700&display=swap', false );
+
 	wp_enqueue_script( 'svine-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'svine-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -158,11 +144,6 @@ function svine_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'svine_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -187,22 +168,31 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Add read-more link to excerpt
+ * Remove brackets from ellipsis on excerpt
  */
 function svine_excerpt_more($more) {
 	global $post;
 	remove_filter('excerpt_more', 'new_excerpt_more');
-	return '&#8230; <a href="'. get_permalink($post->ID) . '">' . 'Continue Reading' . '</a>';
+	return '&#8230;';
 }
 add_filter('excerpt_more','svine_excerpt_more');
 
 /**
- * Remove label/prefix from Category & Taxonomy archive page titles
+ * Customize archive page titles
+ * Remove prefix from some, wrap non-prefix part of title in some others
  */
 add_filter( 'get_the_archive_title', function ( $title ) {
 
-	if( is_category() || is_tax() ) {
+	if ( is_category() || is_tax('vehicle_type') ) {
 		$title = single_cat_title( '', false );
+	} elseif( is_tax('location') ) {
+		$title = sprintf( __( 'Location: <span>%s</span>' ), single_cat_title( '', false ) );
+	} elseif( is_tax('model') ) {
+		$title = sprintf( __( 'Model: <span>%s</span>' ), single_cat_title( '', false ) );
+	} elseif ( is_tag() ) {
+		$title = sprintf( __( 'Tag: <span>%s</span>' ), single_tag_title( '', false ) );
+	} elseif ( is_post_type_archive() ) {
+		$title = post_type_archive_title( '', false );
 	}
 
 	return $title;
@@ -233,26 +223,3 @@ function svine_cpt_tags_archive( $query ) {
 	}
 }
 add_filter( 'pre_get_posts', 'svine_cpt_tags_archive' );
-
-
-/**
- * Customize archive page titles
- */
-
-add_filter( 'get_the_archive_title', function ( $title ) {
-
-	if ( is_post_type_archive() ) {
-
-		// don't prepend title
-		$title = post_type_archive_title('', false);
-
-	} elseif ( is_tag() ) {
-
-		// wrap prepended label for styling
-		$title = single_cat_title('<span>Tag:</span> ', false);
-
-	}
-
-	return $title;
-
-});

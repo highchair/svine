@@ -16,18 +16,21 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
+
+		<?php
+		if ( is_home() ) :
+			?>
+			<header class="page-header">
+				<h1 class="page-title"><?php single_post_title(); ?></h1>
+			</header>
+			<?php
+		endif;
+		?>
+
 		<main id="main" class="site-main">
 
 		<?php
 		if ( have_posts() ) :
-
-			if ( is_home() ) :
-				?>
-				<header>
-					<h1 class="page-title"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
 
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -52,8 +55,12 @@ get_header();
 		?>
 
 		</main><!-- #main -->
+
+		<?php
+		get_sidebar();
+		?>
+
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

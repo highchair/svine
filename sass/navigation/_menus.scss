@@ -1,72 +1,84 @@
+// Header & Footer
+
 .main-navigation {
+	font-family: $font__alt;
+	line-height: 1;
+
 	ul {
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
 	}
-	ul ul {
+
+	li:hover > ul,
+	li.focus > ul {
+		left: 0;
+	}
+
+	li {
+		font-size: 1.5rem;
+		padding-left: $padding;
+		padding-right: $padding;
+		position: relative;
+	}
+
+	a {
+		color: $cream;
+		display: block;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+	}
+
+	.menu {
+		height: 100%;
+		> li {
+			display: inline-flex;
+			flex-direction: column;
+			height: 100%;
+			justify-content: center;
+
+			> a {
+				border-bottom: 2px solid transparent;
+			}
+
+			&:hover > a,
+			&.focus > a,
+			&.current_page_item > a,
+			&.current-menu-item > a {
+				border-color: rgba($white, 0.4);
+			}
+		}
+	}
+
+	.sub-menu {
+		background: $red;
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-		float: left;
+		min-width: 12rem;
 		position: absolute;
 		top: 100%;
 		left: -999em;
 		z-index: 99999;
-
-		ul {
-			left: -999em;
-			top: 0;
-		}
 
 		li {
 			&:hover > ul,
 			&.focus > ul {
 				left: 100%;
 			}
+			a {
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+			}
+			+ li a {
+				border-top: 1px solid rgba($white, 0.5);
+			}
 		}
+	} // .sub-menu
 
-		a {
-			width: 200px;
-		}
-
-		:hover > a,
-		.focus > a {
-		}
-
-		a:hover,
-		a.focus {
-		}
-	}
-
-	li:hover > ul,
-	li.focus > ul {
-		left: auto;
-	}
-
-	li {
-		background: $color__background-body;
-		position: relative;
-
-		&:hover > a,
-		&.focus > a {
-		}
-	}
-
-	a {
-		display: block;
-		padding: $padding / 2;
-		text-decoration: none;
-	}
-
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
-	}
 } // .main-navigation
-
-.nav-menu {
-	background: $color__background-body;
-}
 
 /* Small menu. */
 .menu-toggle,
@@ -74,7 +86,7 @@
 	display: block;
 }
 
-@media screen and (max-width: 37.4em) {
+@media screen and ($medium-down) {
 	.main-menu {
 		width: 100%;
 	}
@@ -88,35 +100,125 @@
 	}
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and ($large-up) {
 	.menu-toggle {
 		display: none;
 	}
 	.main-navigation ul {
 		display: block;
 	}
-	.main-navigation li {
-		float: left;
+}
+
+// Header
+
+.site-header .sub-menu {
+	background: $red;
+	opacity: 0;
+	transition: opacity 0.125s;
+}
+
+.site-header .nav-menu > li {
+	display: inline-flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	transition: all 0.125s;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: $red;
+
+		.sub-menu {
+			opacity: 1;
+		}
+	}
+} // .site-header .nav-menu > li
+
+
+// Posts Navigation
+
+.post-navigation {
+	@include clearfix;
+	border-top: 2px solid $silver;
+	border-bottom: 2px solid $silver;
+	max-width: $size__site-narrow;
+	margin: $padding * 4 auto;
+	width: 100%;
+
+	h3 {
+		@extend .h6;
+		color: $red;
+		margin-bottom: 0;
+	}
+
+	p {
+		margin-top: 0;
+	}
+
+	a {
+		color: $bluegray;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $black;
+		}
 	}
 }
 
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
+.nav-previous {
+	float: left;
+	width: 50%;
+}
 
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
+.nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+	.nav-previous + & {
+		border-left: 2px solid $silver;
+	}
+}
+
+
+// Pagination
+
+.pagination {
+	width: 100%;
+}
+
+.nav-links {
+	margin-bottom: $padding * 4;
+	margin-top: $padding * 4;
+	text-align: center;
+}
+
+.page-numbers {
+	@include button(1px solid);
+	@include fluid-units( 'font-size', 1.375, 2 );
+	align-items: center;
+	color: $bluegray-dk;
+	display: inline-flex;
+	height: 3rem;
+	justify-content: center;
+	padding-top: 0.15em;
+	width: 3rem;
+
+	&.next,
+	&.prev {
+		border-color: transparent;
 	}
 
-	.nav-previous {
-		float: left;
-		width: 50%;
+	&:hover,
+	&:focus,
+	&.current {
+		background: $color__link;
+		border-color: $color__link;
+		color: $white;
 	}
 
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
+	+ .page-numbers {
+		margin-left: $padding * 0.75;
 	}
 }

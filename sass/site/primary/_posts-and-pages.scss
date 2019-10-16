@@ -11,13 +11,356 @@
 	display: none;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.page-title {
+	text-align: center;
+
+	span {
+		color: $bluegray;
+	}
+
+	@media screen and ($large-up) {
+		margin-top: $padding * 3;
+		margin-bottom: $padding * 3;
+	}
+}
+
+// Sidebar
+.widget-area {
+
+	.h6 {
+		margin-top: 0;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	li > a {
+		color: $bluegray;
+		display: block;
+		padding-top: 0.25em;
+		padding-bottom: 0.25em;
+
+		&:hover,
+		&:focus {
+			color: $black;
+		}
+	}
+} // .widget-area
+
+.recent-posts-extended h3 {
+	@extend .h4;
+	margin-top: 0;
+	text-align: center;
+	a {
+		color: $bluegray;
+	}
+}
+
+// Metadata
+.entry-meta {
+	border-bottom: 1px solid $bluegray-lt;
+	padding-bottom: $padding * 2;
+}
+.cat-links {
+	margin-left: $padding / 2;
+}
+
+.posted-on {
+	display: inline;
+	+ p {
+		display: inline;
+	}
+}
+
+// Cards
+.card,
+.rpwe-li {
+	h3 {
+		color: $bluegray;
+		margin-top: $padding / 2;
+		margin-bottom: 0.25em;
+		transition: all 0.15s;
+	}
+
+	a {
+		color: $bluegray-dk;
+		text-decoration: none;
+	}
+
+	img {
+		display: block;
+	}
+
+	&:hover,
+	&:focus {
+		h3,
+		a {
+			color: $black;
+		}
+	}
+}
+
+
+// Vehicle & Taxonomy Archives
+
+.post-type-archive-vehicle,
+.tax-vehicle_type,
+.tax-model,
+.tax-location {
+
+	.site-main {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.card {
+		text-align: center;
+	}
+}
+
+// Vehicle & Vehicle-Type Archives
+.post-type-archive-vehicle,
+.tax-vehicle_type {
+
+	.card {
+		width: calc(50% - #{($padding)});
+
+		h3 {
+			margin-top: $padding;
+		}
+
+		&:first-of-type {
+			width: 100%;
+		}
+
+		&:nth-of-type(2n + 2) {
+			margin-right: $padding * 2;
+		}
+	}
+}
+
+
+// Other Vehicle Taxonomy Archives
+.tax-model .card,
+.tax-location .card {
+	margin-right: $padding;
+	width: calc(50% - #{($padding)});
+
+	@media screen and ($medium-down) {
+		&:nth-of-type(2n) {
+			margin-right: 0;
+		}
+	}
+
+	@media screen and ($large-up) {
+		margin-right: $padding * 2;
+		width: calc(33% - #{($padding * 2)});
+
+		&:nth-of-type(3n) {
+			margin-right: 0;
+		}
+	}
+}
+
+// Search Results
+.search-results {
+
+	.site-content {
+		max-width: $size__site-narrow;
+	}
+
+	.card {
+		@include clearfix;
+		@include clearfix-after;
+		margin-bottom: $padding * 2;
+		width: 100%;
+		display: block;
+
+		.h4 {
+			margin: 0;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.type-vehicle {
+		a {
+			align-items: flex-start;
+			display: flex;
+		}
+		img {
+			margin-right: $padding * 2;
+			width: 10rem;
+		}
+		p {
+			@include fluid-units( 'font-size', 0.85, 1 );
+		}
+	}
+}
+
+
+// Single Vehicle
+.single-vehicle .entry-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	text-align: center;
+
+	> div,
+	> img,
+	> figure {
+		width: 100%;
+	}
+
+	.ngg-galleryoverview + p, // vehicle description
+	.term-links {
+		margin: $padding;
+		width: 24rem;
+	}
+
+	p,
+	a {
+		color: $bluegray;
+	}
+
+	a:hover,
+	a:focus {
+		color: $black;
+	}
+}
+
+div.ngg-galleryoverview {
+	margin-top: 0;
+}
+
+.ngg-gallery-thumbnail-box {
+	margin: $padding / 2;
+}
+
+.ngg-gallery-thumbnail img {
+	transition: all 0.15s;
+}
+
+
+// Single Post
+.single-post h1 {
+	@extend .h2;
+	color: $red;
+	margin-bottom: $padding * 3;
+}
+
+
+// Basic Page
+.page-template-default .site-content {
+	max-width: $size__site-narrow;
+}
+
+
+// Front Page / Homepage
+
+.home .wp-block-cover {
+	border-bottom: 5px solid $red;
+	padding-top: $padding * 10;
+	padding-bottom: $padding * 10;
+
+	.wp-block-cover__inner-container {
+		background: rgba($red, 0.8);
+		box-shadow: 0 $padding/2 $padding/2 rgba($black, 0.75);
+		max-width: 57rem;
+		padding: $padding * 2;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.has-large-font-size {
+		border-bottom: 2px solid $silver;
+		color: $silver;
+		letter-spacing: 0.03125em;
+		line-height: 1;
+		margin-bottom: $padding;
+		padding-bottom: $padding;
+		text-shadow: 0.0em 0.075em 0.15em rgba($black, 0.75);
+		text-transform: uppercase;
+
+		+ p {
+			@include fluid-units( 'font-size', 1.125, 1.37 );
+			padding-left: $padding;
+			padding-right: $padding;
+			text-shadow: 0em 0.2em 0.275em rgba($black, 0.75);
+		}
+	}
+} // .home .wp-block-cover
+
+.wp-block-group.brands {
+	padding-top: $padding;
+	padding-bottom: $padding * 2;
+
+	h2 {
+		margin-bottom: $padding * 4;
+	}
+}
+
+.recent-deliveries {
+	padding-top: $padding * 2;
+	padding-bottom: $padding * 2;
+	text-align: center;
+
+	h2 {
+		margin-bottom: $padding * 2;
+	}
+
+	@media screen and ($medium-up) {
+
+		> div {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.card {
+			margin-right: $padding * 2;
+			width: calc(50% - #{($padding * 1.5)});
+
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	@media screen and ($large-up) {
+
+		.card {
+			width: calc(25% - #{($padding * 1.5)});
+
+			&:nth-of-type(2n) {
+				margin-right: $padding * 2;
+			}
+
+			&:nth-of-type(4n) {
+				margin-right: 0;
+			}
+		}
+	}
+}  // .recent-deliveries
+
+
+// 404 Page
+@media screen and ($large-up) {
+	.error404 {
+
+		.site-content {
+			min-height: 24rem;
+			text-align: center;
+		}
+
+	}
 }

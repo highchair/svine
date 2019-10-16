@@ -1,17 +1,11 @@
 <?php
 /**
- * The default template for displaying archive pages (used for Vehicles and taxonomy)
+ * The template for displaying post archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package SVINE
  */
-
-if ( is_post_type_archive() || is_tax('vehicle_type') ) {
-	$max_count = 9;
-} else {
-	$max_count = 12;
-}
 
 get_header();
 ?>
@@ -35,28 +29,7 @@ get_header();
 
 				the_post();
 
-				static $count = 0;
-
-				if ( $count == $max_count ) {
-					break;
-				} elseif ( $count == 0 && ( is_post_type_archive() || is_tax('vehicle_type') ) ) {
-			?>
-				<article <?php post_class('card'); ?>>
-					<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-						<?php
-						svine_post_thumbnail( 'full' );
-
-						the_title( '<h3 class="h2">', '</h3>' );
-						?>
-					</a>
-				</article>
-			<?php
-				$count++;
-
-				} else {
-					get_template_part( 'template-parts/content', 'archive' );
-					$count++;
-				}
+				get_template_part( 'template-parts/content', 'archive' );
 
 			endwhile;
 
@@ -76,7 +49,7 @@ get_header();
 		</main><!-- #main -->
 
 		<?php
-		if ( is_post_type_archive() || is_tax('vehicle_type') ) {
+		if ( is_post_type_archive() || is_tax() ) {
 			get_sidebar();
 		}
 		?>

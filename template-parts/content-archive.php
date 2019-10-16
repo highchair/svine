@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying results in search & archive pages
+ * Template part for displaying results in archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -9,24 +9,22 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-	</header><!-- .entry-header -->
-
-	<?php
-	if ( is_home() || 'vehicle' === get_post_type() ) {
-		svine_post_thumbnail();
-	}
-	?>
-
-	<div class="entry-summary">
+<article <?php post_class('card'); ?>>
+	<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 		<?php
-		if ( is_search() && 'post' === get_post_type() ) {
-			echo svine_posted_on() . ' – ' . get_the_excerpt();
-		} elseif ( is_home() ) {
+		if ( 'vehicle' === get_post_type() ) {
+			svine_post_thumbnail( 'medium_large' );
+		}
+
+		the_title( '<h3 class="h4">', '</h3>' );
+
+		if ( is_home() ) {
+			svine_post_thumbnail( 'medium_wide' );
+		}
+
+		if ( is_home() ) {
 			the_excerpt();
 		}
 		?>
-	</div><!-- .entry-summary -->
-</article><!-- #post-<?php the_ID(); ?> -->
+	</a>
+</article>
