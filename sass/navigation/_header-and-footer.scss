@@ -16,36 +16,14 @@
 	border-bottom: 5px solid $red;
 }
 
-.desktop-nav {
-	display: none;
-}
-
-#mobile-nav {
-	.main-navigation.toggled & {
-		display: block;
-	}
-
-	.search-form {
-		width: 100%;
-	}
-
-	.site-header & {
-		display: none;
-	}
-}
-
 .site-branding {
 	flex: 1;
 }
 
+// Swap nav version based on viewport size
 .desktop-nav {
-	height: 100%;
-
-	.search-form {
-		align-self: center;
-	}
+	display: none;
 }
-
 @media screen and ($large-up) {
 	#mobile-nav,
 	.main-navigation.toggled #mobile-nav {
@@ -55,15 +33,9 @@
 		display: flex;
 		flex-wrap: wrap;
 	}
-	.main-navigation {
-		align-items: center;
-	}
-	.site-header .main-navigation {
-		height: 6.125rem;
-	}
-	.main-navigation .search-form {
-		margin-left: $padding;
-	}
+}
+
+@media screen and ($large-up) {
 	.site-branding {
 		img {
 			max-width: 20rem;
