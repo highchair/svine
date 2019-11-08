@@ -29,13 +29,19 @@
 		<nav id="site-navigation" class="main-navigation wrap">
 
 			<?php
-			if ( is_front_page() && is_home() ) :
+			if ( is_front_page() ) :
 				?>
-				<h1 class="site-branding"><a href="<?php echo home_url(); ?>"><?php include get_stylesheet_directory() . '/img/logo-badge.svg'; ?></a></h1>
+				<h1 class="site-branding"><a href="<?php echo home_url(); ?>">
+					<?php include get_stylesheet_directory() . '/img/logo-badge.svg'; ?>
+					<span class="screen-reader-text"><?php bloginfo(); ?></span>	
+				</a></h1>
 				<?php
 			else :
 				?>
-				<p class="site-branding"><a href="<?php echo home_url(); ?>"><?php include get_stylesheet_directory() . '/img/logo-badge.svg'; ?></a></p>
+				<p class="site-branding"><a href="<?php echo home_url(); ?>">
+					<?php include get_stylesheet_directory() . '/img/logo-badge.svg'; ?>
+					<span class="screen-reader-text"><?php bloginfo(); ?></span>	
+				</a></p>
 				<?php
 			endif;
 			?>
