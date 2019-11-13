@@ -63,6 +63,7 @@ button.icon-button {
 		&:after {
 			bottom: 0;
 			right: 0;
+			opacity: 0; // fix Chrome bug
 		}
 	}
 }
