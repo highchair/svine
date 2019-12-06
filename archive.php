@@ -8,7 +8,7 @@
  */
 
 if ( is_post_type_archive() || is_tax('vehicle_type') ) {
-	$max_count = 9;
+	$max_count = 19;
 } else {
 	$max_count = 12;
 }

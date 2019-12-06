@@ -1,5 +1,9 @@
 @media screen and ($large-up) {
 
+	.site-main {
+		padding-bottom: $padding * 4;
+	}
+
 	.blog,
 	.single-post,
 	.post-type-archive,

@@ -11,7 +11,7 @@
 		max-width: 100%;
 	}
 
-	aside & + .widget {
-		margin-top: $padding * 3;
+	aside & {
+		margin-bottom: $padding * 3;
 	}
 }

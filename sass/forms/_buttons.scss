@@ -41,7 +41,7 @@ button.icon-button {
 .button.cta {
 	background: $color__background-body;
 	display: table;
-	margin: $padding * 3 auto;
+	margin: $padding * 3 auto $padding;
 	position: relative;
 	transition: none;
 
