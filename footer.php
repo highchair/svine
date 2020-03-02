@@ -16,8 +16,11 @@
 	<footer id="colophon" class="site-footer"><div class="wrap">
 
 		<div class="site-branding">
-			<a href="<?php echo home_url(); ?>"><?php include get_stylesheet_directory() . '/img/logo-badge.svg'; ?></a>
-			<div class="social-links">&nbsp;</div>
+			<a href="<?php echo home_url(); ?>" class="logo"><?php include get_stylesheet_directory() . '/img/logo-badge.svg'; ?></a>
+			<div class="social-links">
+				<span class="label"><?php esc_html_e( 'Stay in touch with SVI:', 'svine' ); ?></span>
+				<?php dynamic_sidebar( 'social' ); ?>
+			</div>
 		</div><!-- .site-branding -->
 
 		<div class="footer-widgets">

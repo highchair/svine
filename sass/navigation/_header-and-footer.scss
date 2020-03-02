@@ -6,7 +6,7 @@
 .site-branding {
 	margin: 0;
 
-	a {
+	.logo {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -89,6 +89,20 @@ button.menu-toggle {
 		text-align: center;
 		margin-top: $padding;
 		margin-bottom: $padding;
+	}
+
+	.social-links {
+		margin-top: $padding;
+
+		.label {
+			font-family: $font__alt;
+			font-size: 1.25rem;
+			margin-right: $padding;
+		}
+
+		.widget {
+			display: inline-block;
+		}
 	}
 
 	@media screen and ($large-up) {

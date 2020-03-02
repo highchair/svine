@@ -31,14 +31,14 @@
 			<?php
 			if ( is_front_page() ) :
 				?>
-				<h1 class="site-branding"><a href="<?php echo home_url(); ?>">
+				<h1 class="site-branding"><a href="<?php echo home_url(); ?>" class="logo">
 					<?php include get_stylesheet_directory() . '/img/logo-badge.svg'; ?>
 					<span class="screen-reader-text"><?php bloginfo(); ?></span>	
 				</a></h1>
 				<?php
 			else :
 				?>
-				<p class="site-branding"><a href="<?php echo home_url(); ?>">
+				<p class="site-branding"><a href="<?php echo home_url(); ?>" class="logo">
 					<?php include get_stylesheet_directory() . '/img/logo-badge.svg'; ?>
 					<span class="screen-reader-text"><?php bloginfo(); ?></span>	
 				</a></p>
