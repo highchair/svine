@@ -42,14 +42,6 @@
 	.main-navigation {
 		position: relative;
 	}
-	.footer-navigation {
-		margin-top: $padding;
-		margin-bottom: $padding;
-		.menu {
-			columns: 2;
-			text-align: center;
-		}
-	}
 }
 
 @media screen and ($large-up) {

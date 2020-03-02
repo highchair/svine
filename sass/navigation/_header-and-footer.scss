@@ -92,15 +92,17 @@ button.menu-toggle {
 	}
 
 	@media screen and ($large-up) {
-		.wrap {
+
+		.site-branding,
+		.site-info {
+			width: 100%;
+		}
+
+		.site-branding,
+		.footer-widgets {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
-		}
-
-		.main-navigation,
-		.site-info {
-			width: 100%;
 		}
 
 		.widget {
