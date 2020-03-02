@@ -11,17 +11,28 @@
 		flex-direction: column;
 		justify-content: center;
 		height: 100%;
-		width: 24rem;
+		width: 14rem;
+
+		@media screen and ($large-up) {
+			width: 24rem;
+		}
 	}
 }
 
 .site-header {
 	background: $color__background-screen;
 	border-bottom: 5px solid $red;
+	padding-left: $padding;
+	padding-right: $padding;
 }
 
 .site-branding {
 	flex: 1;
+
+	@media screen and ($large-up) {
+		margin-top: $padding;
+		margin-bottom: $padding;
+	}
 }
 
 // Swap nav version based on viewport size
@@ -52,6 +63,7 @@ button.menu-toggle {
 	background-image: url('../img/navicon.svg');
 	background-repeat: no-repeat;
 	height: 4rem;
+	margin-right: -$padding;
 	width: 4rem;
 
 	.toggled & {

@@ -68,10 +68,12 @@
 	background-image: linear-gradient($black, $color__background-screen 15%);
 	bottom: 0;
 	height: 100vh;
+	margin-left: -$padding;
+	margin-right: -$padding;
 	padding: ($padding * 2) ($padding * 4);
 	position: absolute;
 	text-align: center;
-	width: 100%;
+	width: calc(100% + (#{$padding} * 2));
 	transform: translateY( calc( 100% + 5px ) ); // compensate 5px for border
 	z-index: 9;
 
