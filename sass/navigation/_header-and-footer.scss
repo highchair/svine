@@ -22,8 +22,10 @@
 .site-header {
 	background: $color__background-screen;
 	border-bottom: 5px solid $red;
-	padding-left: $padding;
-	padding-right: $padding;
+
+	@media screen and ($large-up) {
+		padding: 0;
+	}
 }
 
 .site-branding {

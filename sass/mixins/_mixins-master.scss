@@ -12,8 +12,10 @@
 
 // Full-width block
 @mixin full-width() {
-  margin-left: -($padding / 2);
-  margin-right: -($padding / 2);
+  margin-left: -$padding;
+  margin-right: -$padding;
+  padding-left: $padding;
+  padding-right: $padding;
   width: auto; // reset
 
   @media screen and ($xlarge-up) {
