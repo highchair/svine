@@ -24,13 +24,13 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'svine' ); ?></a>
 
-	<header id="masthead" class="site-header">
-
-		<div class="social-links desktop-utility">
-			<div class="wrap">
-				<?php dynamic_sidebar( 'social' ); ?>
-			</div>
+	<div class="social-links desktop-utility">
+		<div class="wrap">
+			<?php dynamic_sidebar( 'social' ); ?>
 		</div>
+	</div>
+
+	<header id="masthead" class="site-header">
 
 		<nav id="site-navigation" class="main-navigation wrap">
 
