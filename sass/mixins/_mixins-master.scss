@@ -88,26 +88,38 @@
 
 // Social Icons
 @mixin social-icons() {
-  background-repeat: no-repeat;
-  display: inline-block;
-  margin-left: $padding;
-  width: 2rem;
 
   .text {
     @extend .screen-reader-text;
   }
 
-  &.facebook {
+  .widget_text {
+    display: inline-block;
+  }
+
+  .textwidget {
+    align-items: center;
+    display: flex;
+  }
+
+  a {
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left: $padding;
+    width: 2rem;
+  }
+
+  .facebook {
     background-image: url('../img/icon-facebook.svg');
     height: 1.75rem;
   }
 
-  &.linkedin {
+  .linkedin {
     background-image: url('../img/icon-linkedin.svg');
     height: 1.75rem;
   }
 
-  &.instagram {
+  .instagram {
     background-image: url('../img/icon-instagram.svg');
     height: 2rem;
   }

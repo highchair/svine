@@ -91,6 +91,11 @@
 	}
 }
 
+// Social Links / Utility
+.mobile-utility {
+	@include social-icons;
+}
+
 
 /*--------------------------------------------------------------
 ## Desktop Nav
@@ -208,6 +213,7 @@
 --------------------------------------------------------------*/
 
 .site-footer .social-links {
+	@include social-icons;
 	align-items: center;
 	display: flex;
 	margin-top: $padding;
@@ -217,19 +223,6 @@
 		font-size: 1.25rem;
 		margin-right: $padding;
 		padding-top: 0.125em;
-	}
-
-	a {
-		@include social-icons;
-	}
-
-	.widget_text {
-		display: inline-block;
-	}
-
-	.textwidget {
-		align-items: center;
-		display: flex;
 	}
 }
 
