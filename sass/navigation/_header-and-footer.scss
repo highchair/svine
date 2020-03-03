@@ -36,15 +36,18 @@
 }
 
 // Swap nav version based on viewport size
-.desktop-nav {
+.desktop-nav,
+.desktop-utility {
 	display: none;
 }
 @media screen and ($large-up) {
 	#mobile-nav,
-	.main-navigation.toggled #mobile-nav {
+	.main-navigation.toggled #mobile-nav,
+	.mobile-utility {
 		display: none;
 	}
-	.desktop-nav {
+	.desktop-nav,
+	.desktop-utility {
 		display: flex;
 		flex-wrap: wrap;
 	}

@@ -126,6 +126,29 @@
 	}
 } // .desktop-nav
 
+.desktop-utility {
+	background: darken( $bluegray-dk, 3);
+	padding-top: $padding / 3;
+	padding-bottom: $padding / 3;
+	text-align: right;
+
+	a {
+		border-bottom: 1px solid transparent;
+		color: $white;
+		font-size: 0.85rem;
+		font-weight: bold;
+		letter-spacing: 0.175em;
+		margin-left: $padding * 2;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&:hover,
+		&:focus {
+			border-color: rgba($white, 0.4);
+		}
+	}
+}
+
 
 /*--------------------------------------------------------------
 ## Header Nav

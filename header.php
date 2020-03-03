@@ -26,6 +26,12 @@
 
 	<header id="masthead" class="site-header">
 
+		<div class="social-links desktop-utility">
+			<div class="wrap">
+				<?php dynamic_sidebar( 'social' ); ?>
+			</div>
+		</div>
+
 		<nav id="site-navigation" class="main-navigation wrap">
 
 			<?php
