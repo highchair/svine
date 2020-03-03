@@ -17,6 +17,7 @@ textarea {
 	background: $cream;
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
+	max-width: 100%;
 	padding: 3px;
 	transition: all 0.125s;
 

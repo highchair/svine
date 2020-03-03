@@ -101,10 +101,17 @@ button.menu-toggle {
 	}
 
 	@media screen and ($medium-down) {
+		padding-top: $padding * 3;
+		padding-bottom: $padding * 3;
 
 		.site-branding .logo {
 			margin-left: auto;
 			margin-right: auto;
+		}
+
+		.widget {
+			margin-top: $padding * 4;
+			margin-bottom: $padding * 4;
 		}
 
 	}

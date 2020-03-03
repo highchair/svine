@@ -221,8 +221,8 @@
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	margin-top: $padding * 1.5;
-	margin-bottom: $padding * 1.5;
+	margin-top: $padding * 3;
+	margin-bottom: $padding * 3;
 
 	.label {
 		font-family: $font__alt;
@@ -233,6 +233,11 @@
 		@media screen and ($large-down) {
 			display: none;
 		}
+	}
+
+	@media screen and ($large-up) {
+		margin-top: $padding;
+		margin-bottom: $padding;
 	}
 }
 

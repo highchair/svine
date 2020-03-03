@@ -85,6 +85,7 @@
 // Cards
 .card,
 .rpwe-li {
+	margin-bottom: $padding;
 	h3 {
 		color: $bluegray;
 		margin-top: $padding / 2;
@@ -329,10 +330,17 @@ div.ngg-galleryoverview {
 
 .wp-block-group.brands {
 	padding-top: $padding;
-	padding-bottom: $padding * 2;
 
 	h2 {
 		margin-bottom: $padding * 4;
+	}
+
+	.wp-block-image {
+		margin-bottom: $padding * 6;
+	}
+
+	.wp-block-columns {
+		margin-bottom: 0;
 	}
 }
 
