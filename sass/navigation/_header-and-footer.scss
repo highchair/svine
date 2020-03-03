@@ -96,6 +96,15 @@ button.menu-toggle {
 		margin-bottom: $padding;
 	}
 
+	@media screen and ($medium-down) {
+
+		.site-branding .logo {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+	}
+
 	@media screen and ($large-up) {
 
 		.site-branding,
