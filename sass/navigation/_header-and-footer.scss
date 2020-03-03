@@ -96,20 +96,6 @@ button.menu-toggle {
 		margin-bottom: $padding;
 	}
 
-	.social-links {
-		margin-top: $padding;
-
-		.label {
-			font-family: $font__alt;
-			font-size: 1.25rem;
-			margin-right: $padding;
-		}
-
-		.widget {
-			display: inline-block;
-		}
-	}
-
 	@media screen and ($large-up) {
 
 		.site-branding,

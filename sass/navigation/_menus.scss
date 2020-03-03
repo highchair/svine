@@ -204,6 +204,37 @@
 
 
 /*--------------------------------------------------------------
+## Footer Nav
+--------------------------------------------------------------*/
+
+.site-footer .social-links {
+	align-items: center;
+	display: flex;
+	margin-top: $padding;
+
+	.label {
+		font-family: $font__alt;
+		font-size: 1.25rem;
+		margin-right: $padding;
+		padding-top: 0.125em;
+	}
+
+	a {
+		@include social-icons;
+	}
+
+	.widget_text {
+		display: inline-block;
+	}
+
+	.textwidget {
+		align-items: center;
+		display: flex;
+	}
+}
+
+
+/*--------------------------------------------------------------
 ## Posts Nav
 --------------------------------------------------------------*/
 

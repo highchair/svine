@@ -128,7 +128,7 @@ function svine_widgets_init() {
 		'name'          => esc_html__( 'Social Links', 'svine' ),
 		'id'            => 'social',
 		'description'   => esc_html__( 'Add widgets here.', 'svine' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'before_widget' => '<div id="%1$s" class="%2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title h6">',
 		'after_title'   => '</h3>',

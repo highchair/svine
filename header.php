@@ -62,6 +62,11 @@
 					'menu_id'        => 'mobile-menu',
 					'depth'		 	 => 0
 				) );
+				?>
+				<div class="social-links mobile-utility">
+					<?php dynamic_sidebar( 'social' ); ?>
+				</div>
+				<?php
 				get_search_form();
 				?>
 			</div>
