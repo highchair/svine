@@ -96,6 +96,10 @@ button.menu-toggle {
 		margin-bottom: $padding;
 	}
 
+	.widget-title {
+		margin-bottom: 0.5em;
+	}
+
 	@media screen and ($medium-down) {
 
 		.site-branding .logo {
