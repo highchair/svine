@@ -19,8 +19,8 @@
   width: auto; // reset
 
   @media screen and ($xlarge-up) {
-    margin-left: calc(-100vw / 2 + #{$size__site-main} / 2);
-    margin-right: calc(-100vw / 2 + #{$size__site-main} / 2);
+    margin-left: calc(-100vw / 2 + #{$size__site-main} / 2 - #{$padding});
+    margin-right: calc(-100vw / 2 + #{$size__site-main} / 2 - #{$padding});
   }
 }
 
