@@ -7,6 +7,8 @@
  * @package SVINE
  */
 
+$related_vehicles = get_field('related_vehicles');
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -19,6 +21,23 @@
 	<div class="entry-content">
 		<?php
 		the_content();
+
+		if ( $related_vehicles ):
+		?>
+			<div class="related-vehicles">
+				<h2><?php _e('Related Vehicles', 'pvdsigns'); ?></h2>
+				<div>
+					<?php
+					foreach( $related_vehicles as $post ):
+						setup_postdata($post);
+						get_template_part( 'template-parts/content', 'archive' );
+					endforeach;
+					wp_reset_postdata();
+					?>
+				</div>
+			</div>
+		<?php
+		endif;
 
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'svine' ),

@@ -88,6 +88,7 @@
 	margin-bottom: $padding;
 	h3 {
 		color: $bluegray;
+		line-height: 1em;
 		margin-top: $padding / 2;
 		margin-bottom: 0.25em;
 		transition: all 0.15s;
@@ -344,7 +345,8 @@ div.ngg-galleryoverview {
 	}
 }
 
-.recent-deliveries {
+.recent-deliveries,
+.related-vehicles {
 	padding-top: $padding * 2;
 	padding-bottom: $padding * 2;
 	text-align: center;
