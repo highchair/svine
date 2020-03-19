@@ -259,6 +259,11 @@ div.ngg-galleryoverview {
 
 .ngg-gallery-thumbnail-box {
 	margin: $padding / 2;
+
+	@media screen and ($small-down) {
+		margin: $padding / 4;
+		width: 46%;
+	}
 }
 
 .ngg-gallery-thumbnail img {
