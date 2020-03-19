@@ -55,6 +55,8 @@ if ( ! function_exists( 'svine_entry_footer' ) ) :
 
 		if ( 'vehicle' === get_post_type() ) {
 
+			global $post;
+
 			echo '<p class="term-links">';
 
 			$location_list = get_the_term_list( $post->ID, 'location', '<strong>Location</strong>: ', ', ', '<br />' );
