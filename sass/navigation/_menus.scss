@@ -120,6 +120,11 @@
 			height: 100%;
 			justify-content: center;
 
+			&.current_page_item,
+			&.current_menu_item {
+				background-color: rgba($black, 0.25);
+			}
+
 			> a {
 				border-bottom: 2px solid transparent;
 			}
@@ -204,6 +209,27 @@
 		a {
 			padding-top: 1rem;
 			padding-bottom: 1rem;
+			position: relative;
+			
+			&::before {
+				content: '';
+				background-color: rgba($black, 0.0);
+				transition: 250ms background-color ease;
+			}
+		}
+		a:hover,
+		a:focus {
+			color: $white;
+			
+			&::before {
+				background-color: rgba($black, 0.15);
+				position: absolute;
+				top: 0;
+				left: -1rem;
+				right: -1rem;
+				bottom: 0;
+				z-index: -1;
+			}
 		}
 		+ li a {
 			border-top: 1px solid rgba($white, 0.5);
@@ -211,13 +237,18 @@
 	}
 }
 
+/*--------------------------------------------------------------
+## Social Links — Header and Footer
+--------------------------------------------------------------*/
+.social-links {
+	@include social-icons;
+}
 
 /*--------------------------------------------------------------
 ## Footer Nav
 --------------------------------------------------------------*/
 
 .site-footer .social-links {
-	@include social-icons;
 	align-items: center;
 	display: flex;
 	justify-content: center;
