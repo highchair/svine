@@ -89,26 +89,6 @@
 // Social Icons
 @mixin social-icons() {
 
-  .text {
-    @extend .screen-reader-text;
-  }
-
-  .widget_text {
-    display: inline-block;
-  }
-
-  .textwidget {
-    align-items: center;
-    display: flex;
-  }
-
-  a {
-    background-repeat: no-repeat;
-    display: inline-block;
-    margin-left: $padding;
-    width: 2rem;
-  }
-
   .facebook {
     background-image: url('../img/icon-facebook.svg');
     height: 1.75rem;
