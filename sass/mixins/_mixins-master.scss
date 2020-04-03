@@ -90,7 +90,13 @@
 @mixin social-icons() {
 
   .text {
-    @extend .screen-reader-text;
+    display: inline-block;
+    font-family: $font__main;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.175em;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 
   .widget_text {
@@ -103,24 +109,31 @@
   }
 
   a {
-    background-repeat: no-repeat;
     display: inline-block;
     margin-left: $padding;
-    width: 2rem;
   }
 
-  .facebook {
+  .icon {
+    background-position-y: -1px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right: 0.25rem;
+    vertical-align: middle;
+    width: 1.65rem;
+  }
+
+  .icon-facebook {
     background-image: url('../img/icon-facebook.svg');
-    height: 1.75rem;
+    height: 1.5rem;
   }
 
-  .linkedin {
+  .icon-linkedin {
     background-image: url('../img/icon-linkedin.svg');
-    height: 1.75rem;
+    height: 1.5rem;
   }
 
-  .instagram {
+  .icon-instagram {
     background-image: url('../img/icon-instagram.svg');
-    height: 2rem;
+    height: 1.65rem;
   }
 }

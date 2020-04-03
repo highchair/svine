@@ -93,8 +93,6 @@
 
 // Social Links / Utility
 .mobile-utility {
-	@include social-icons;
-
 	margin-top: $padding * 2;
 	margin-bottom: $padding * 2;
 }
@@ -147,14 +145,9 @@
 		border-bottom: 1px solid transparent;
 		color: $white;
 		display: inline-block;
-		font-size: 0.85rem;
-		font-weight: bold;
-		letter-spacing: 0.175em;
 		margin-left: $padding * 1.5;
 		padding-top: 0.25em;
 		padding-bottom: 0.25em;
-		text-decoration: none;
-		text-transform: uppercase;
 
 		&:hover,
 		&:focus {
@@ -237,12 +230,15 @@
 	}
 }
 
+
 /*--------------------------------------------------------------
 ## Social Links — Header and Footer
 --------------------------------------------------------------*/
+
 .social-links {
 	@include social-icons;
 }
+
 
 /*--------------------------------------------------------------
 ## Footer Nav
