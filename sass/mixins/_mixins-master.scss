@@ -87,7 +87,7 @@
 
 
 // Social Icons
-@mixin social-icons() {
+@mixin social-icons($icons-only: false) {
 
   .text {
     display: inline-block;
@@ -119,21 +119,48 @@
     display: inline-block;
     margin-right: 0.25rem;
     vertical-align: middle;
-    width: 1.65rem;
   }
 
   .icon-facebook {
     background-image: url('../img/icon-facebook.svg');
-    height: 1.5rem;
   }
 
   .icon-linkedin {
     background-image: url('../img/icon-linkedin.svg');
-    height: 1.5rem;
   }
 
   .icon-instagram {
     background-image: url('../img/icon-instagram.svg');
-    height: 1.65rem;
   }
-}
+
+  @if ($icons-only == true) {
+
+    .icon {
+      width: 2rem;
+    }
+
+    .icon-facebook,
+    .icon-linkedin {
+      height: 1.75rem;
+    }
+
+    .icon-instagram {
+      height: 2rem;
+    }
+  } @else {
+
+    .icon {
+      width: 1.65rem;
+    }
+
+    .icon-facebook,
+    .icon-linkedin {
+      height: 1.5rem;
+    }
+
+    .icon-instagram {
+      height: 1.65rem;
+    }
+  }
+
+} // social-icons()

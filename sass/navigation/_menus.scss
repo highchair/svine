@@ -93,6 +93,7 @@
 
 // Social Links / Utility
 .mobile-utility {
+	@include social-icons;
 	margin-top: $padding * 2;
 	margin-bottom: $padding * 2;
 }
@@ -138,6 +139,7 @@
 } // .desktop-nav
 
 .desktop-utility {
+	@include social-icons;
 	background: darken( $bluegray-dk, 4);
 	text-align: right;
 
@@ -232,19 +234,11 @@
 
 
 /*--------------------------------------------------------------
-## Social Links — Header and Footer
---------------------------------------------------------------*/
-
-.social-links {
-	@include social-icons;
-}
-
-
-/*--------------------------------------------------------------
 ## Footer Nav
 --------------------------------------------------------------*/
 
 .site-footer .social-links {
+	@include social-icons(true);
 	align-items: center;
 	display: flex;
 	justify-content: center;
@@ -260,6 +254,11 @@
 		@media screen and ($large-down) {
 			display: none;
 		}
+	}
+
+	// show icons only
+	.text {
+	    @extend .screen-reader-text;
 	}
 
 	@media screen and ($large-up) {
