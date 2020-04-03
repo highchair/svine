@@ -87,7 +87,7 @@
 
 
 // Social Icons
-@mixin social-icons($icons-only: false) {
+@mixin social-icons($icons-only: false, $inline: true) {
 
   .text {
     display: inline-block;
@@ -97,20 +97,6 @@
     letter-spacing: 0.175em;
     text-decoration: none;
     text-transform: uppercase;
-  }
-
-  .widget_text {
-    display: inline-block;
-  }
-
-  .textwidget {
-    align-items: center;
-    display: flex;
-  }
-
-  a {
-    display: inline-block;
-    margin-left: $padding;
   }
 
   .icon {
@@ -134,6 +120,11 @@
   }
 
   @if ($icons-only == true) {
+
+    .textwidget {
+      align-items: center;
+      display: flex;
+    }
 
     .icon {
       width: 2rem;
@@ -160,6 +151,18 @@
 
     .icon-instagram {
       height: 1.65rem;
+    }
+  }
+
+  @if ($inline == true) {
+
+    .widget_text {
+      display: inline-block;
+    }
+
+    a {
+      display: inline-block;
+      margin-left: $padding;
     }
   }
 

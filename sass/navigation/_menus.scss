@@ -93,7 +93,7 @@
 
 // Social Links / Utility
 .mobile-utility {
-	@include social-icons;
+	@include social-icons($inline: false);
 	margin-top: $padding * 2;
 	margin-bottom: $padding * 2;
 }
