@@ -17,6 +17,8 @@ textarea {
 	background: $cream;
 	color: $color__text-input;
 	border: 1px solid $color__border-input;
+	max-width: 100%;
+	width: 100%;
 	padding: 3px;
 	transition: all 0.125s;
 
@@ -28,6 +30,7 @@ textarea {
 
 select {
 	border: 1px solid $color__border-input;
+	width: 100%;
 }
 
 textarea {
@@ -37,8 +40,10 @@ textarea {
 .search-form {
 	position: relative;
 	.search-field {
+		border-color: transparent;
 		line-height: 1;
 		padding: 0.225em;
+		width: 100%;
 	}
 	.icon-button {
 		padding: 0;
@@ -53,4 +58,19 @@ textarea {
 	fill: $bluegray-dk;
 	height: 1.75rem;
 	width: 1.75rem;
+}
+
+@media screen and ($medium-up) {
+	.field-group {
+		display: flex;
+		> * {
+			flex: 1;
+		}
+		> *:last-child {
+			margin-left: $padding;
+		}
+		p {
+			margin-bottom: 0;
+		}
+	}
 }

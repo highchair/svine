@@ -1,4 +1,21 @@
 table {
 	margin: 0 0 1.5em;
+}
+
+.wp-block-table {
+	max-width: 100%;
 	width: 100%;
+	overflow-x: auto;
+}
+
+td {
+	padding: $padding / 2;
+}
+
+tr {
+	padding-top: $padding / 4;
+	padding-bottom: $padding / 4;
+	&:nth-child(even) {
+		background: lighten($silver, 4);
+	}
 }

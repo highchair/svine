@@ -4,7 +4,7 @@
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+	margin: 0;
 }
 
 .updated:not(.published) {
@@ -51,6 +51,10 @@
 			color: $black;
 		}
 	}
+
+	@media screen and ($medium-down) {
+		text-align: center;
+	}
 } // .widget-area
 
 .recent-posts-extended h3 {
@@ -81,8 +85,10 @@
 // Cards
 .card,
 .rpwe-li {
+	margin-bottom: $padding;
 	h3 {
 		color: $bluegray;
+		line-height: 1em;
 		margin-top: $padding / 2;
 		margin-bottom: 0.25em;
 		transition: all 0.15s;
@@ -119,6 +125,7 @@
 		align-content: flex-start;
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 
 	.card {
@@ -131,18 +138,21 @@
 .tax-vehicle_type {
 
 	.card {
-		width: calc(50% - #{($padding)});
 
 		h3 {
 			margin-top: $padding;
 		}
 
-		&:first-of-type {
-			width: 100%;
-		}
+		@media screen and ($medium-up) {
+			width: calc(50% - #{($padding)});
 
-		&:nth-of-type(2n + 2) {
-			margin-right: $padding * 2;
+			&:first-of-type {
+				width: 100%;
+			}
+
+			&:nth-of-type(2n + 2) {
+				margin-right: $padding * 2;
+			}
 		}
 	}
 }
@@ -152,8 +162,6 @@
 .tax-model .card,
 .tax-location .card,
 .tag .card {
-	margin-right: $padding;
-	width: calc(50% - #{($padding)});
 
 	@media screen and ($medium-down) {
 		&:nth-of-type(2n) {
@@ -161,9 +169,14 @@
 		}
 	}
 
+	@media screen and ($medium-up) {
+		margin-right: $padding;
+		width: calc(50% - #{($padding)});
+	}
+
 	@media screen and ($large-up) {
 		margin-right: $padding * 2;
-		width: calc(33% - #{($padding * 2)});
+		width: calc(33.334% - #{($padding * 2)});
 
 		&:nth-of-type(3n) {
 			margin-right: 0;
@@ -246,6 +259,11 @@ div.ngg-galleryoverview {
 
 .ngg-gallery-thumbnail-box {
 	margin: $padding / 2;
+
+	@media screen and ($small-down) {
+		margin: $padding / 4;
+		width: 46%;
+	}
 }
 
 .ngg-gallery-thumbnail img {
@@ -271,14 +289,21 @@ div.ngg-galleryoverview {
 
 .home .wp-block-cover {
 	border-bottom: 5px solid $red;
-	padding-top: $padding * 10;
-	padding-bottom: $padding * 10;
+	padding-top: $padding * 2;
+	padding-bottom: $padding * 2;
 
 	.wp-block-cover__inner-container {
 		background: rgba($red, 0.8);
 		box-shadow: 0 $padding/2 $padding/2 rgba($black, 0.75);
+		margin-left: $padding;
+		margin-right: $padding;
 		max-width: 57rem;
-		padding: $padding * 2;
+		padding: $padding;
+		width: 100%;
+
+		@media screen and ($large-up) {
+			padding: $padding * 2;
+		}
 	}
 
 	p {
@@ -302,18 +327,31 @@ div.ngg-galleryoverview {
 			text-shadow: 0em 0.2em 0.275em rgba($black, 0.75);
 		}
 	}
+
+	@media screen and ($large-up) {
+		padding-top: $padding * 10;
+		padding-bottom: $padding * 10;
+	}
 } // .home .wp-block-cover
 
 .wp-block-group.brands {
 	padding-top: $padding;
-	padding-bottom: $padding * 2;
 
 	h2 {
 		margin-bottom: $padding * 4;
 	}
+
+	.wp-block-image {
+		margin-bottom: $padding * 6;
+	}
+
+	.wp-block-columns {
+		margin-bottom: 0;
+	}
 }
 
-.recent-deliveries {
+.recent-deliveries,
+.related-vehicles {
 	padding-top: $padding * 2;
 	padding-bottom: $padding * 2;
 	text-align: center;

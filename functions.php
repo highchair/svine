@@ -124,6 +124,15 @@ function svine_widgets_init() {
 		'before_title'  => '<h3 class="widget-title h6">',
 		'after_title'   => '</h3>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Social Links', 'svine' ),
+		'id'            => 'social',
+		'description'   => esc_html__( 'Add widgets here.', 'svine' ),
+		'before_widget' => '<div id="%1$s" class="%2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title h6">',
+		'after_title'   => '</h3>',
+	) );
 }
 add_action( 'widgets_init', 'svine_widgets_init' );
 

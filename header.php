@@ -24,6 +24,12 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'svine' ); ?></a>
 
+	<div class="social-links desktop-utility">
+		<div class="wrap">
+			<?php dynamic_sidebar( 'social' ); ?>
+		</div>
+	</div>
+
 	<header id="masthead" class="site-header">
 
 		<nav id="site-navigation" class="main-navigation wrap">
@@ -31,14 +37,14 @@
 			<?php
 			if ( is_front_page() ) :
 				?>
-				<h1 class="site-branding"><a href="<?php echo home_url(); ?>">
+				<h1 class="site-branding"><a href="<?php echo home_url(); ?>" class="logo">
 					<?php include get_stylesheet_directory() . '/img/logo-badge.svg'; ?>
 					<span class="screen-reader-text"><?php bloginfo(); ?></span>	
 				</a></h1>
 				<?php
 			else :
 				?>
-				<p class="site-branding"><a href="<?php echo home_url(); ?>">
+				<p class="site-branding"><a href="<?php echo home_url(); ?>" class="logo">
 					<?php include get_stylesheet_directory() . '/img/logo-badge.svg'; ?>
 					<span class="screen-reader-text"><?php bloginfo(); ?></span>	
 				</a></p>
@@ -56,6 +62,11 @@
 					'menu_id'        => 'mobile-menu',
 					'depth'		 	 => 0
 				) );
+				?>
+				<div class="social-links mobile-utility">
+					<?php dynamic_sidebar( 'social' ); ?>
+				</div>
+				<?php
 				get_search_form();
 				?>
 			</div>

@@ -6,6 +6,7 @@ $cream: #efeadc;
 
 $white: #fdfefe;
 $silver: #e5e6e7;
+$gray-lt: darken($silver, 5);
 $gray: #959AA1;
 $black: #222222;
 
@@ -25,5 +26,5 @@ $color__text-main: $black;
 $color__border-button: $bluegray-lt;
 $color__border-button-hover: $bluegray;
 $color__border-button-focus: $bluegray;
-$color__border-input: transparent;
+$color__border-input: $bluegray-lt;
 $color__border-abbr: $silver;

@@ -44,9 +44,10 @@ figure {
 	background: $color__background-screen;
 	border-bottom: 5px solid $red;
 	color: $white;
+	padding-top: $padding * 2;
+	padding-bottom: $padding * 2;
 
-	a,
-	.widget-title {
+	a {
 		color: $white;
 	}
 
@@ -54,36 +55,56 @@ figure {
 		text-decoration: none;
 	}
 
-	.widget-title,
-	.textwidget {
-		flex: 50%;
-	}
-
 	.widget {
 		@include wrap();
-		display: flex;
-		flex-wrap: wrap;
+	}
+
+	.widget-title {
+		color: $cream;
+		margin: 0;
 	}
 
 	.textwidget {
-		@include fluid-units( 'font-size', 1.25, 1.62 );
-		align-content: center;
-		display: flex;
-		flex-wrap: wrap;
+		@include fluid-units( 'font-size', 1.125, 1.62 );
 		font-family: $font__alt;
-		justify-content: space-around;
-		letter-spacing: 0.0625em;
+		font-size: 1.62rem;
+		text-align: center;
+	}
+
+	@media screen and ($medium-down) {
 		text-align: center;
 
-		div {
+		.textwidget div {
+			margin-top: $padding;
+		}
+	}
 
+	@media screen and ($medium-up) {
+
+		.widget {
+			align-items: center;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.widget-title,
+		.textwidget {
+			flex: 50%;
+		}
+
+		.textwidget {
+			align-content: center;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
 		}
 	}
 } // .callout
 
 .pullquote {
 	@include full-width;
-	background: $silver;
+	background-color: $silver;
+	background-image: linear-gradient($gray-lt 5%, $white 50%, $gray-lt 95%);
 	padding-top: $padding * 4;
 	padding-bottom: $padding * 4;
 

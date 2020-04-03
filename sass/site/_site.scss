@@ -1,11 +1,17 @@
 .wrap {
 	margin: 0 auto;
 	max-width: $size__site-main;
+	padding-left: $padding;
+	padding-right: $padding;
+	width: 100%;
 }
 
-// hide overflow from full-width sections
+body {
+	overflow-x: hidden; // hide overflow from full-width sections
+}
+
 .site {
-	overflow-x: hidden;
+	position: relative; // needed for sticky header
 }
 
 @import "../layout/content-sidebar";

@@ -6,34 +6,54 @@
 .site-branding {
 	margin: 0;
 
-	a {
+	.logo {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		height: 100%;
-		width: 24rem;
+		width: 14rem;
+
+		@media screen and ($large-up) {
+			width: 24rem;
+		}
 	}
 }
 
 .site-header {
 	background: $color__background-screen;
 	border-bottom: 5px solid $red;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 9;
+
+	@media screen and ($large-up) {
+		padding: 0;
+	}
 }
 
 .site-branding {
 	flex: 1;
+
+	@media screen and ($large-up) {
+		margin-top: $padding;
+		margin-bottom: $padding;
+	}
 }
 
 // Swap nav version based on viewport size
-.desktop-nav {
+.desktop-nav,
+.desktop-utility {
 	display: none;
 }
 @media screen and ($large-up) {
 	#mobile-nav,
-	.main-navigation.toggled #mobile-nav {
+	.main-navigation.toggled #mobile-nav,
+	.mobile-utility {
 		display: none;
 	}
-	.desktop-nav {
+	.desktop-nav,
+	.desktop-utility {
 		display: flex;
 		flex-wrap: wrap;
 	}
@@ -52,6 +72,7 @@ button.menu-toggle {
 	background-image: url('../img/navicon.svg');
 	background-repeat: no-repeat;
 	height: 4rem;
+	margin-right: -$padding;
 	width: 4rem;
 
 	.toggled & {
@@ -79,16 +100,38 @@ button.menu-toggle {
 		margin-bottom: $padding;
 	}
 
+	.widget-title {
+		margin-bottom: 0.5em;
+	}
+
+	@media screen and ($medium-down) {
+		padding-top: $padding * 3;
+		padding-bottom: $padding * 3;
+
+		.site-branding .logo {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.widget {
+			margin-top: $padding * 4;
+			margin-bottom: $padding * 4;
+		}
+
+	}
+
 	@media screen and ($large-up) {
-		.wrap {
+
+		.site-branding,
+		.site-info {
+			width: 100%;
+		}
+
+		.site-branding,
+		.footer-widgets {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
-		}
-
-		.main-navigation,
-		.site-info {
-			width: 100%;
 		}
 
 		.widget {

@@ -12,13 +12,15 @@
 
 // Full-width block
 @mixin full-width() {
-  margin-left: -($padding / 2);
-  margin-right: -($padding / 2);
+  margin-left: -$padding;
+  margin-right: -$padding;
+  padding-left: $padding;
+  padding-right: $padding;
   width: auto; // reset
 
   @media screen and ($xlarge-up) {
-    margin-left: calc(-100vw / 2 + #{$size__site-main} / 2);
-    margin-right: calc(-100vw / 2 + #{$size__site-main} / 2);
+    margin-left: calc(-100vw / 2 + #{$size__site-main} / 2 - #{$padding});
+    margin-right: calc(-100vw / 2 + #{$size__site-main} / 2 - #{$padding});
   }
 }
 
@@ -82,3 +84,86 @@
     }
   }
 }
+
+
+// Social Icons
+@mixin social-icons($icons-only: false, $inline: true) {
+
+  .text {
+    display: inline-block;
+    font-family: $font__main;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.175em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .icon {
+    background-position-y: -1px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right: 0.25rem;
+    vertical-align: middle;
+  }
+
+  .icon-facebook {
+    background-image: url('../img/icon-facebook.svg');
+  }
+
+  .icon-linkedin {
+    background-image: url('../img/icon-linkedin.svg');
+  }
+
+  .icon-instagram {
+    background-image: url('../img/icon-instagram.svg');
+  }
+
+  @if ($icons-only == true) {
+
+    .textwidget {
+      align-items: center;
+      display: flex;
+    }
+
+    .icon {
+      width: 2rem;
+    }
+
+    .icon-facebook,
+    .icon-linkedin {
+      height: 1.75rem;
+    }
+
+    .icon-instagram {
+      height: 2rem;
+    }
+  } @else {
+
+    .icon {
+      width: 1.65rem;
+    }
+
+    .icon-facebook,
+    .icon-linkedin {
+      height: 1.5rem;
+    }
+
+    .icon-instagram {
+      height: 1.65rem;
+    }
+  }
+
+  @if ($inline == true) {
+
+    .widget_text {
+      display: inline-block;
+    }
+
+    a {
+      display: inline-block;
+      margin-left: $padding;
+    }
+  }
+
+} // social-icons()
