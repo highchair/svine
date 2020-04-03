@@ -87,40 +87,83 @@
 
 
 // Social Icons
-@mixin social-icons() {
+@mixin social-icons($icons-only: false, $inline: true) {
 
   .text {
-    @extend .screen-reader-text;
-  }
-
-  .widget_text {
     display: inline-block;
+    font-family: $font__main;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.175em;
+    text-decoration: none;
+    text-transform: uppercase;
   }
 
-  .textwidget {
-    align-items: center;
-    display: flex;
-  }
-
-  a {
+  .icon {
+    background-position-y: -1px;
     background-repeat: no-repeat;
     display: inline-block;
-    margin-left: $padding;
-    width: 2rem;
+    margin-right: 0.25rem;
+    vertical-align: middle;
   }
 
-  .facebook {
+  .icon-facebook {
     background-image: url('../img/icon-facebook.svg');
-    height: 1.75rem;
   }
 
-  .linkedin {
+  .icon-linkedin {
     background-image: url('../img/icon-linkedin.svg');
-    height: 1.75rem;
   }
 
-  .instagram {
+  .icon-instagram {
     background-image: url('../img/icon-instagram.svg');
-    height: 2rem;
   }
-}
+
+  @if ($icons-only == true) {
+
+    .textwidget {
+      align-items: center;
+      display: flex;
+    }
+
+    .icon {
+      width: 2rem;
+    }
+
+    .icon-facebook,
+    .icon-linkedin {
+      height: 1.75rem;
+    }
+
+    .icon-instagram {
+      height: 2rem;
+    }
+  } @else {
+
+    .icon {
+      width: 1.65rem;
+    }
+
+    .icon-facebook,
+    .icon-linkedin {
+      height: 1.5rem;
+    }
+
+    .icon-instagram {
+      height: 1.65rem;
+    }
+  }
+
+  @if ($inline == true) {
+
+    .widget_text {
+      display: inline-block;
+    }
+
+    a {
+      display: inline-block;
+      margin-left: $padding;
+    }
+  }
+
+} // social-icons()

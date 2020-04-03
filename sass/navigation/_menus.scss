@@ -93,8 +93,7 @@
 
 // Social Links / Utility
 .mobile-utility {
-	@include social-icons;
-
+	@include social-icons($inline: false);
 	margin-top: $padding * 2;
 	margin-bottom: $padding * 2;
 }
@@ -140,6 +139,7 @@
 } // .desktop-nav
 
 .desktop-utility {
+	@include social-icons;
 	background: darken( $bluegray-dk, 4);
 	text-align: right;
 
@@ -147,14 +147,9 @@
 		border-bottom: 1px solid transparent;
 		color: $white;
 		display: inline-block;
-		font-size: 0.85rem;
-		font-weight: bold;
-		letter-spacing: 0.175em;
 		margin-left: $padding * 1.5;
 		padding-top: 0.25em;
 		padding-bottom: 0.25em;
-		text-decoration: none;
-		text-transform: uppercase;
 
 		&:hover,
 		&:focus {
@@ -237,18 +232,13 @@
 	}
 }
 
-/*--------------------------------------------------------------
-## Social Links — Header and Footer
---------------------------------------------------------------*/
-.social-links {
-	@include social-icons;
-}
 
 /*--------------------------------------------------------------
 ## Footer Nav
 --------------------------------------------------------------*/
 
 .site-footer .social-links {
+	@include social-icons(true);
 	align-items: center;
 	display: flex;
 	justify-content: center;
@@ -264,6 +254,11 @@
 		@media screen and ($large-down) {
 			display: none;
 		}
+	}
+
+	// show icons only
+	.text {
+	    @extend .screen-reader-text;
 	}
 
 	@media screen and ($large-up) {
