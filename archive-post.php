@@ -48,12 +48,6 @@ get_header();
 
 		</main><!-- #main -->
 
-		<?php
-		if ( is_post_type_archive() || is_tax() ) {
-			get_sidebar();
-		}
-		?>
-
 	</div><!-- #primary -->
 
 <?php
