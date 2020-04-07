@@ -7,7 +7,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	@include fluid-units( 'font-size', 1.75, 3 );
+	@include fluid-units( 'font-size', 1.875, 3 );
 	color: $bluegray-dk;
 	line-height: $font__line-height-heading;
 	font-family: $font__alt;
@@ -17,7 +17,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-	@include fluid-units( 'font-size', 1.5625, 2.2 );
+	@include fluid-units( 'font-size', 1.5, 2.2 );
 	color: $bluegray;
 	line-height: $font__line-height-heading;
 }
