@@ -3,16 +3,16 @@
 	// Pull out into the parent wrapper padding
 	margin: 0 -1rem;
 
-  @media ($xlarge-up) {
+	@media ($xlarge-up) {
 		margin: 0 -2.5rem;
-  }
+	}
 }
 
 // Images
 .wp-block-image {
-  figcaption {
-    text-align: center;
-  }
+	figcaption {
+		text-align: center;
+	}
 }
 
 // Aligned images should not float for mobile
