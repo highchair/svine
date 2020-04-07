@@ -1,0 +1,33 @@
+// Post Thumbnails — Featured images
+.has-post-thumbnail > .post-thumbnail {
+	// Pull out into the parent wrapper padding
+	margin: 0 -1rem;
+
+  @media ($xlarge-up) {
+		margin: 0 -2.5rem;
+  }
+}
+
+// Images
+.wp-block-image {
+  figcaption {
+    text-align: center;
+  }
+}
+
+// Aligned images should not float for mobile
+@media screen and ($small-down) {
+	.wp-block-image .alignright,
+	.wp-block-image .aligncenter,
+	.wp-block-image .alignleft {
+		display: block;
+		float: none;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.wp-block-image .alignright img,
+	.wp-block-image .aligncenter img,
+	.wp-block-image .alignleft img {
+		width: 100%;
+	}
+}
