@@ -7,11 +7,7 @@
  * @package SVINE
  */
 
-if ( is_post_type_archive() || is_tax('vehicle_type') ) {
-	$max_count = 19;
-} else {
-	$max_count = 12;
-}
+$max_count = 24;
 
 get_header();
 ?>
@@ -39,20 +35,6 @@ get_header();
 
 				if ( $count == $max_count ) {
 					break;
-				} elseif ( $count == 0 && ( is_post_type_archive() || is_tax('vehicle_type') ) ) {
-			?>
-				<article <?php post_class('card'); ?>>
-					<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-						<?php
-						svine_post_thumbnail( 'full' );
-
-						the_title( '<h3 class="h2">', '</h3>' );
-						?>
-					</a>
-				</article>
-			<?php
-				$count++;
-
 				} else {
 					get_template_part( 'template-parts/content', 'archive' );
 					$count++;
@@ -74,12 +56,6 @@ get_header();
 		?>
 
 		</main><!-- #main -->
-
-		<?php
-		if ( is_post_type_archive() || is_tax('vehicle_type') ) {
-			get_sidebar();
-		}
-		?>
 
 	</div><!-- #primary -->
 

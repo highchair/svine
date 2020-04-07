@@ -14,3 +14,14 @@ function svine_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'svine_pingback_header' );
+
+/**
+ * Alphabetize archive page posts
+ */
+function svine_modify_query_order( $query ) {
+	if ( $query->is_archive() ) {
+		$query->set( 'orderby', 'title' );
+		$query->set( 'order', 'ASC' );
+	}
+}
+add_action( 'pre_get_posts', 'svine_modify_query_order' );
