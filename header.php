@@ -59,8 +59,7 @@
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
-					'menu_id'        => 'mobile-menu',
-					'depth'		 	 => 0
+					'menu_id'        => 'mobile-menu'
 				) );
 				?>
 				<div class="social-links mobile-utility">

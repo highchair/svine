@@ -70,7 +70,7 @@
 	z-index: 9;
 
 	a {
-		padding: $padding;
+		padding: $padding * 0.75;
 		width: 100%;
 	}
 
@@ -78,7 +78,21 @@
 		margin-top: $padding;
 		width: 100%;
 	}
-}
+
+	.menu > li {
+		margin-top: $padding * 1.5;
+		margin-bottom: $padding * 1.5;
+
+		> a {
+			border-bottom: 1px solid $bluegray-lt;
+			margin-bottom: $padding / 2;
+		}
+	}
+
+	.sub-menu a {
+		font-size: 1.375rem;
+	}
+} // .site-header #mobile-nav
 
 // Toggle
 .site-header {
@@ -160,7 +174,7 @@
 
 
 /*--------------------------------------------------------------
-## Header Nav
+## Desktop Header Nav
 --------------------------------------------------------------*/
 
 .site-header .desktop-nav {
@@ -185,7 +199,7 @@
 	}
 } // .site-header .desktop-nav .menu > li
 
-.site-header .sub-menu {
+.site-header .desktop-nav .sub-menu {
 	background: $red;
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	min-width: 12rem;
