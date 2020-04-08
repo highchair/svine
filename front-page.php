@@ -7,6 +7,8 @@
  * @package SVINE
  */
 
+$related_vehicles = get_field('related_vehicles');
+
 get_header();
 ?>
 
@@ -28,38 +30,24 @@ get_header();
 				?>
 			</div>
 
-			<div class="recent-deliveries">
-				<h2><?php esc_html_e( 'Our Recent Deliveries', 'svine' ); ?></h2>
-				<div>
-					<?php
-
-					$loop = new WP_Query( array(
-						'post_type' => 'vehicle',
-						'tax_query' => array(
-							array(
-								'taxonomy' => 'vehicle_type',
-								'field'    => 'slug',
-								'terms'    => 'deliveries',
-							),
-						),
-						'posts_per_page' => 4
-					) );
-
-					if ( $loop->have_posts() ) {
-						while ( $loop->have_posts() ) {
-							$loop->the_post();
+			<?php
+			if ( $related_vehicles ):
+			?>
+				<div class="recent-deliveries">
+					<h2><?php _e('Our Recent Deliveries', 'svine'); ?></h2>
+					<div>
+						<?php
+						foreach( $related_vehicles as $post ):
+							setup_postdata($post);
 							get_template_part( 'template-parts/content', 'archive' );
-						}
-					}
-
-					wp_reset_postdata();
-
-					?>
+						endforeach;
+						wp_reset_postdata();
+						?>
+					</div>
 				</div>
-				<a class="button cta" href="<?php echo get_term_link('deliveries', 'vehicle_type'); ?>">
-					<?php esc_html_e( 'All Deliveries', 'svine' ); ?>
-				</a>
-			</div>
+			<?php
+			endif;
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
