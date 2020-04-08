@@ -4,6 +4,7 @@
 }
 
 .site-branding {
+	flex: 1;
 	margin: 0;
 
 	.logo {
@@ -25,7 +26,12 @@
 		height: 66px;
 		width: 384px;
 	}
-}
+
+	@media screen and ($large-up) {
+		margin-top: $padding;
+		margin-bottom: $padding;
+	}
+} // .site-branding
 
 .site-header {
 	background: $color__background-screen;
@@ -37,15 +43,6 @@
 
 	@media screen and ($large-up) {
 		padding: 0;
-	}
-}
-
-.site-branding {
-	flex: 1;
-
-	@media screen and ($large-up) {
-		margin-top: $padding;
-		margin-bottom: $padding;
 	}
 }
 
