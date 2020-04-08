@@ -17,6 +17,14 @@
 			width: 24rem;
 		}
 	}
+
+	// support for IE
+	svg {
+		max-height: 100%;
+		max-width: 100%;
+		height: 66px;
+		width: 384px;
+	}
 }
 
 .site-header {
