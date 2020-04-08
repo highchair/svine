@@ -23,8 +23,13 @@
 	svg {
 		max-height: 100%;
 		max-width: 100%;
-		height: 66px;
-		width: 384px;
+		height: 39px;
+		width: 224px;
+
+		@media screen and ($large-up) {
+			height: 66px;
+			width: 384px;
+		}
 	}
 
 	@media screen and ($large-up) {
