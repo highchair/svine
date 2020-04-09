@@ -115,7 +115,7 @@
 --------------------------------------------------------------*/
 
 .desktop-nav {
-	height: 100%;
+	height: 6.125rem;
 
 	.search-form {
 		align-self: center;
@@ -124,30 +124,85 @@
 
 	.menu {
 		height: 100%;
-		> li {
-			display: inline-flex;
-			flex-direction: column;
-			height: 100%;
-			justify-content: center;
+	}
 
-			&.current_page_item,
-			&.current_menu_item {
-				background-color: rgba($black, 0.25);
-			}
+	.menu > li {
+		display: inline-flex;
+		flex-direction: column;
+		height: 100%;
+		justify-content: center;
+		transition: all 0.125s;
 
-			> a {
-				border-bottom: 2px solid transparent;
-			}
+		&.current_page_item,
+		&.current_menu_item {
+			background-color: rgba($black, 0.25);
+		}
 
-			&:hover > a,
-			&.focus > a,
-			&.current_page_item > a,
-			&.current-menu-item > a {
-				border-color: rgba($white, 0.4);
-			}
+		> a {
+			border-bottom: 2px solid transparent;
+		}
+
+		&:hover > a,
+		&.focus > a,
+		&.current_page_item > a,
+		&.current-menu-item > a {
+			border-color: rgba($white, 0.4);
+		}
+	}
+
+	.menu > li:hover,
+	.menu > li:focus,
+	.menu > li:active {
+		background: $red;
+
+		.sub-menu {
+			opacity: 1;
 		}
 	}
 } // .desktop-nav
+
+.desktop-nav .sub-menu {
+	background: $red;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	min-width: 12rem;
+	opacity: 0;
+	position: absolute;
+	transition: opacity 0.125s;
+	top: 100%;
+	left: 0;
+	z-index: 99999;
+
+	li a {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		position: relative;
+
+		&::before {
+			content: '';
+			background-color: rgba($black, 0.0);
+			transition: 250ms background-color ease;
+		}
+
+		&:hover,
+		&:focus {
+			color: $white;
+			
+			&::before {
+				background-color: rgba($black, 0.15);
+				position: absolute;
+				top: 0;
+				left: -1rem;
+				right: -1rem;
+				bottom: 0;
+				z-index: -1;
+			}
+		}
+	}
+
+	li + li a {
+		border-top: 1px solid rgba($white, 0.5);
+	}
+} // .desktop-nav .sub-menu
 
 .desktop-utility {
 	@include social-icons;
@@ -165,76 +220,6 @@
 		&:hover,
 		&:focus {
 			border-color: rgba($white, 0.4);
-		}
-	}
-}
-
-
-/*--------------------------------------------------------------
-## Desktop Header Nav
---------------------------------------------------------------*/
-
-.site-header .desktop-nav {
-	height: 6.125rem;
-}
-
-.site-header .desktop-nav .menu > li {
-	display: inline-flex;
-	flex-direction: column;
-	height: 100%;
-	justify-content: center;
-	transition: all 0.125s;
-
-	&:hover,
-	&:focus,
-	&:active {
-		background: $red;
-
-		.sub-menu {
-			opacity: 1;
-		}
-	}
-} // .site-header .desktop-nav .menu > li
-
-.site-header .desktop-nav .sub-menu {
-	background: $red;
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	min-width: 12rem;
-	opacity: 0;
-	position: absolute;
-	transition: opacity 0.125s;
-	top: 100%;
-	left: 0;
-	z-index: 99999;
-
-	li {
-		a {
-			padding-top: 1rem;
-			padding-bottom: 1rem;
-			position: relative;
-			
-			&::before {
-				content: '';
-				background-color: rgba($black, 0.0);
-				transition: 250ms background-color ease;
-			}
-		}
-		a:hover,
-		a:focus {
-			color: $white;
-			
-			&::before {
-				background-color: rgba($black, 0.15);
-				position: absolute;
-				top: 0;
-				left: -1rem;
-				right: -1rem;
-				bottom: 0;
-				z-index: -1;
-			}
-		}
-		+ li a {
-			border-top: 1px solid rgba($white, 0.5);
 		}
 	}
 }
