@@ -19,7 +19,7 @@ add_action( 'wp_head', 'svine_pingback_header' );
  * Alphabetize archive page posts
  */
 function svine_modify_query_order( $query ) {
-	if ( $query->is_archive() ) {
+	if ( $query->is_archive() && !$query->is_category() ) {
 		$query->set( 'orderby', 'title' );
 		$query->set( 'order', 'ASC' );
 	}
