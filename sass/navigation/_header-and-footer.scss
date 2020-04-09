@@ -14,7 +14,7 @@
 		height: 100%;
 		width: 14rem;
 
-		@media screen and ($large-up) {
+		@media screen and ($xlarge-up) {
 			width: 24rem;
 		}
 	}
@@ -26,13 +26,13 @@
 		height: 39px;
 		width: 224px;
 
-		@media screen and ($large-up) {
+		@media screen and ($xlarge-up) {
 			height: 66px;
 			width: 384px;
 		}
 	}
 
-	@media screen and ($large-up) {
+	@media screen and ($xlarge-up) {
 		margin-top: $padding;
 		margin-bottom: $padding;
 	}
@@ -56,7 +56,7 @@
 .desktop-utility {
 	display: none;
 }
-@media screen and ($large-up) {
+@media screen and ($xlarge-up) {
 	#mobile-nav,
 	.main-navigation.toggled #mobile-nav,
 	.mobile-utility {
@@ -69,7 +69,7 @@
 	}
 }
 
-@media screen and ($large-up) {
+@media screen and ($xlarge-up) {
 	.site-branding {
 		img {
 			max-width: 20rem;
