@@ -9,11 +9,6 @@
 		padding-left: 0;
 	}
 
-	li:hover > ul,
-	li.focus > ul {
-		left: 0;
-	}
-
 	li {
 		font-size: 1.5rem;
 		margin-left: 0;
@@ -209,14 +204,10 @@
 	position: absolute;
 	transition: opacity 0.125s;
 	top: 100%;
-	left: -999em;
+	left: 0;
 	z-index: 99999;
 
 	li {
-		&:hover > ul,
-		&.focus > ul {
-			left: 100%;
-		}
 		a {
 			padding-top: 1rem;
 			padding-bottom: 1rem;
