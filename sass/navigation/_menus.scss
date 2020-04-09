@@ -155,7 +155,8 @@
 	.menu > li:active {
 		background: $red;
 
-		.sub-menu {
+		> .sub-menu {
+			left: 0;
 			opacity: 1;
 		}
 	}
@@ -169,7 +170,7 @@
 	position: absolute;
 	transition: opacity 0.125s;
 	top: 100%;
-	left: 0;
+	left: -999em; // push off-screen so you can't hover on it by accident
 	z-index: 99999;
 
 	li a {
