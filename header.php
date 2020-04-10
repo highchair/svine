@@ -70,7 +70,7 @@
 				?>
 			</div>
 
-			<div class="desktop-nav">
+			<div id="desktop-nav" class="desktop-nav">
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
