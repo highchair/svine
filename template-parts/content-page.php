@@ -25,7 +25,7 @@ $related_vehicles = get_field('related_vehicles');
 		if ( $related_vehicles ):
 		?>
 			<div class="related-vehicles">
-				<h2><?php _e('Related Vehicles', 'pvdsigns'); ?></h2>
+				<h2><?php _e('Related Vehicles', 'svine'); ?></h2>
 				<div>
 					<?php
 					foreach( $related_vehicles as $post ):

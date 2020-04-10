@@ -4,6 +4,7 @@
 }
 
 .site-branding {
+	flex: 1;
 	margin: 0;
 
 	.logo {
@@ -13,11 +14,29 @@
 		height: 100%;
 		width: 14rem;
 
-		@media screen and ($large-up) {
+		@media screen and ($xlarge-up) {
 			width: 24rem;
 		}
 	}
-}
+
+	// support for IE
+	svg {
+		max-height: 100%;
+		max-width: 100%;
+		height: 39px;
+		width: 224px;
+
+		@media screen and ($xlarge-up) {
+			height: 66px;
+			width: 384px;
+		}
+	}
+
+	@media screen and ($xlarge-up) {
+		margin-top: $padding;
+		margin-bottom: $padding;
+	}
+} // .site-branding
 
 .site-header {
 	background: $color__background-screen;
@@ -32,21 +51,12 @@
 	}
 }
 
-.site-branding {
-	flex: 1;
-
-	@media screen and ($large-up) {
-		margin-top: $padding;
-		margin-bottom: $padding;
-	}
-}
-
 // Swap nav version based on viewport size
 .desktop-nav,
 .desktop-utility {
 	display: none;
 }
-@media screen and ($large-up) {
+@media screen and ($xlarge-up) {
 	#mobile-nav,
 	.main-navigation.toggled #mobile-nav,
 	.mobile-utility {
@@ -59,7 +69,7 @@
 	}
 }
 
-@media screen and ($large-up) {
+@media screen and ($xlarge-up) {
 	.site-branding {
 		img {
 			max-width: 20rem;

@@ -18,6 +18,13 @@ blockquote {
 	margin: 0;
 }
 
+@media screen and ($medium-down) {
+	.wp-block-quote.is-large p,
+	.wp-block-quote.is-style-large p {
+		font-size: 1.25rem;
+	}
+}
+
 .wp-block-pullquote {
 	border-left: 5px solid $red;
 	padding-left: $padding * 2.25;
@@ -99,4 +106,10 @@ small {
 	background: $red;
 	height: 3px;
 	width: 50vw;
+	max-width: 50%;
+	margin: 2.25rem auto 3rem;
+	
+	@media screen and ($large-up) {
+		margin: 4rem auto 5rem;
+  }
 }

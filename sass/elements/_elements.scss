@@ -44,18 +44,15 @@ figure {
 	background: $color__background-screen;
 	border-bottom: 5px solid $red;
 	color: $white;
-	padding-top: $padding * 2;
-	padding-bottom: $padding * 2;
 
 	a {
 		color: $white;
-	}
-
-	a {
 		text-decoration: none;
 	}
 
 	.widget {
+		padding-top: $padding * 2;
+		padding-bottom: $padding * 2;
 		@include wrap();
 	}
 
