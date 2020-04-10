@@ -159,8 +159,7 @@
 		overflow: hidden;
 		
 		&::after {
-			background-color: $red;
-			color: $white;
+			background-color: $yellow;
 			font-size: 1.125rem;
 			font-weight: bold;
 			content: 'SOLD';
