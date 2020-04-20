@@ -166,6 +166,16 @@
 		left: 0;
 		opacity: 1;
 	}
+
+	// triangle dropdown indicator
+	.menu-item-has-children > a::after {
+		color: rgba($silver, 0.5);
+		content: '\25BC';
+		display: inline-block;
+		font-size: 0.85rem;
+		margin-left: 0.5em;
+		vertical-align: 0.25em;
+	}
 } // .desktop-nav
 
 .desktop-nav .sub-menu {
