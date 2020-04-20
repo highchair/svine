@@ -142,10 +142,10 @@ jQuery(document).ready( function($) {
 	 */
 
 	// submenu's are hidden on load
-	$('.main-navigation .sub-menu').hide();
+	$('.desktop-nav .sub-menu').hide();
 
 	// submenu opens on click
-	$('.main-navigation .menu-item-has-children').click(function(e) {
+	$('.desktop-nav .menu-item-has-children').click(function(e) {
 
 		var $el = $('.sub-menu',this);
 
@@ -156,7 +156,7 @@ jQuery(document).ready( function($) {
 	});
 
 	// stop events from bubbling from submenu clicks
-	$('.main-navigation .sub-menu > li').click(function(e) {
+	$('.desktop-nav .sub-menu > li').click(function(e) {
 		e.stopPropagation();
 	});
 
