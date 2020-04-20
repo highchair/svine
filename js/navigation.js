@@ -144,6 +144,9 @@ jQuery(document).ready( function($) {
 	// submenu's are hidden on load
 	$('.desktop-nav .sub-menu').hide();
 
+	// add 'role' attribute to parent items
+	$('.desktop-nav .menu-item-has-children').attr('role', 'button');
+
 	// submenu opens on click
 	$('.desktop-nav .menu-item-has-children').click(function(e) {
 
