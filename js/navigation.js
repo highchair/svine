@@ -134,3 +134,30 @@
 		}
 	}( container ) );
 } )();
+
+jQuery(document).ready( function($) {
+
+	/**
+	 * Open and close menu items with submenu's
+	 */
+
+	// submenu's are hidden on load
+	$('.main-navigation .sub-menu').hide();
+
+	// submenu opens on click
+	$('.main-navigation .menu-item-has-children').click(function(e) {
+
+		var $el = $('.sub-menu',this);
+
+		// toggle element
+		$el.stop(true, true).show();
+
+		return false;
+	});
+
+	// stop events from bubbling from submenu clicks
+	$('.main-navigation .sub-menu > li').click(function(e) {
+		e.stopPropagation();
+	});
+
+} );
