@@ -42,7 +42,7 @@ textarea {
 	.search-field {
 		border-color: transparent;
 		line-height: 1;
-		padding: 0.225em;
+		padding: 0.225em 1.5em 0.225em 0.225em; // extra padding-right to compensate for icon
 		width: 100%;
 	}
 	.icon-button {

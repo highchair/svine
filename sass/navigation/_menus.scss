@@ -10,7 +10,7 @@
 	}
 
 	li {
-		font-size: 1.5rem;
+		font-size: 1.375rem;
 		margin-left: 0;
 		padding-left: $padding;
 		padding-right: $padding;
@@ -125,6 +125,7 @@
 	.search-form {
 		align-self: center;
 		margin-left: $padding;
+		width: 12rem;
 	}
 
 	.menu {
