@@ -174,14 +174,19 @@
 	.menu-item-has-children {
 		cursor: pointer;
 		
-		// triangle dropdown indicator
+		// triangle/arrow dropdown indicator
 		> a::after {
-			color: rgba($silver, 0.5);
-			content: '\25BC';
+			border-left: 0.225em solid transparent;
+			border-right: 0.225em solid transparent;
+			border-top: 0.375em solid rgba($silver, 0.5);
+			content: 'Toggle to Open Menu';
 			display: inline-block;
-			font-size: 0.85rem;
-			margin-left: 0.5em;
-			vertical-align: 0.25em;
+			width: 0;
+			height: 0;
+			margin-left: 0.25em;
+			overflow: hidden;
+			text-indent: -9999;
+			vertical-align: 0.125em;
 		}
 	}
 } // .desktop-nav
