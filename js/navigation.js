@@ -153,7 +153,7 @@ jQuery(document).ready( function($) {
 		var $el = $('.sub-menu',this);
 
 		// toggle element
-		$el.stop(true, true).show();
+		$el.stop(true, true).toggle();
 
 		return false;
 	});
