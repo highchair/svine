@@ -12,8 +12,8 @@
 	li {
 		font-size: 1.375rem;
 		margin-left: 0;
-		padding-left: $padding;
-		padding-right: $padding;
+		padding-left: ($padding * 0.75);
+		padding-right: ($padding * 0.75);
 		position: relative;
 	}
 
@@ -130,6 +130,28 @@
 
 	.menu {
 		height: 100%;
+
+		// Hover the LI, change the BG color
+		// Hover the submenu or keyboard tab into it, keep that color
+		li:focus-within, // for keyboards
+		li:hover {
+			background-color: $red;
+			color: $white;
+		}
+
+		// Grouping no-js styles together
+		.no-js &-item .sub-menu, {
+			visibility: hidden;
+			opacity: 0;
+			transition: none;
+		}
+
+		.no-js &-item:hover .sub-menu,
+		.no-js &-item:focus-within .sub-menu {
+			visibility: visible;
+			opacity: 1;
+			transition: none;
+		}
 	}
 
 	.menu > li {
@@ -146,86 +168,79 @@
 
 		> a {
 			border-bottom: 2px solid transparent;
+
+			&:focus {
+				outline: 2px solid $black;
+				outline-offset: 4px;
+			}
 		}
 
 		&:hover > a,
-		&.focus > a,
 		&.current_page_item > a,
 		&.current-menu-item > a {
 			border-color: rgba($white, 0.4);
 		}
 	}
 
-	.menu > li:hover,
-	.menu > li.focus,
-	.menu > li:active {
-		background: $red;
-
-		> .sub-menu {
-			left: 0;
-			opacity: 1;
-		}
-	}
-
-	.focus .sub-menu {
-		left: 0;
-		opacity: 1;
-	}
-
 	.menu-item-has-children {
 		cursor: pointer;
-		
+
 		// triangle/arrow dropdown indicator
-		> a::after {
-			border-left: 0.225em solid transparent;
-			border-right: 0.225em solid transparent;
-			border-top: 0.375em solid rgba($silver, 0.5);
-			content: 'Toggle to Open Menu';
-			display: inline-block;
-			width: 0;
-			height: 0;
-			margin-left: 0.25em;
-			overflow: hidden;
-			text-indent: -9999;
-			vertical-align: 0.125em;
+		> a {
+
+			&[aria-expanded=false] + .sub-menu {
+				visibility: hidden;
+				opacity: 0;
+				transition: 500ms opacity ease 0s, 0s visibility linear 500ms;
+			}
+
+			&[aria-expanded=true] + .sub-menu {
+				visibility: visible;
+				opacity: 1;
+				transition: 500ms opacity ease 0s, 0s visibility linear 0s;
+			}
+
+			&::after {
+				border-left: 0.225em solid transparent;
+				border-right: 0.225em solid transparent;
+				border-top: 0.375em solid rgba($silver, 0.5);
+				content: ''; // The aria labels added by JS make it clear that there are child items
+				display: inline-block;
+				width: 0;
+				height: 0;
+				margin-left: 0.25em;
+				overflow: hidden;
+				vertical-align: 0.125em;
+			}
 		}
 	}
 } // .desktop-nav
 
 .desktop-nav .sub-menu {
-	background: $red;
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	min-width: 12rem;
-	opacity: 0;
 	position: absolute;
-	transition: opacity 0.125s;
 	top: 100%;
-	left: -999em; // push off-screen so you can't hover on it by accident
-	z-index: 99999;
+	left: 0;
+	z-index: 9999;
 
-	li a {
-		padding-top: 1rem;
-		padding-bottom: 1rem;
-		position: relative;
+	li {
+		 background: $red;
+		transition: background 250ms ease;
 
-		&::before {
-			content: '';
-			background-color: rgba($black, 0.0);
-			transition: 250ms background-color ease;
+		 &:hover,
+		&:focus {
+			background: darken($red, 5%);
 		}
 
-		&:hover,
-		&:focus {
-			color: $white;
-			
-			&::before {
-				background-color: rgba($black, 0.15);
-				position: absolute;
-				top: 0;
-				left: -1rem;
-				right: -1rem;
-				bottom: 0;
-				z-index: -1;
+		a {
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			position: relative;
+
+			&:focus {
+				outline: 2px solid $black;
+				outline-offset: -2px;
 			}
 		}
 	}
