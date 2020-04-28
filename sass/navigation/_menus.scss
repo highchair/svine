@@ -130,71 +130,68 @@
 		width: 11rem;
 	}
 
-	/*ul*/.menu {
-
-		// Without JS, sub-menus appear on hover with a mouse
-		// or when focused with a keyboard
-		.no-js &-item .sub-menu, {
-			visibility: hidden;
-			opacity: 0;
-			transition: none;
-		}
-
-		.no-js &-item:hover .sub-menu,
-		.no-js &-item:focus-within .sub-menu {
-			visibility: visible;
-			opacity: 1;
-			transition: none;
-		}
-
-		> li {
-			display: inline-flex;
-			flex-direction: column;
-			justify-content: center;
-
-			> a {
-				padding: 2.3125em ($padding * 0.75) 2.25em; // Important to use EMs for vertical measure
-				position: relative;
-				transition: background 250ms ease;
-
-				// Line under the text
-				&::before {
-					background: transparent;
-					content: '';
-					position: absolute;
-					top: 3.3125em;
-					left: ($padding * 0.75);
-					right: ($padding * 0.75);
-					height: 2px;
-					transition: background 250ms ease;
-				}
-			}
-
-			&.current-menu-parent > a {
-				background-color: darken( $bluegray-dk, 4);
-
-				&::before {
-					background: rgba($white, 0.4)
-				}
-			}
-
-			> a:hover,
-			> a:focus,
-			> a[aria-expanded=true],
-			&:focus-within > a,
-			.no-js &:hover > a,
-			.no-js &:focus-within > a {
-				background-color: $red;
-				color: $white;
-
-				&::before {
-					background: rgba($white, 0.4)
-				}
-			}
-		}
+	// Without JS, sub-menus appear on hover with a mouse
+	// or when focused with a keyboard
+	.no-js .menu-item .sub-menu, {
+		visibility: hidden;
+		opacity: 0;
+		transition: none;
 	}
 
-	/*li*/.menu-item-has-children {
+	.no-js .menu-item:hover .sub-menu,
+	.no-js .menu-item:focus-within .sub-menu {
+		visibility: visible;
+		opacity: 1;
+		transition: none;
+	}
+
+	.menu > li {
+		display: inline-flex;
+		flex-direction: column;
+		justify-content: center;
+
+		> a {
+			padding: 2.3125em ($padding * 0.75) 2.25em; // Important to use EMs for vertical measure
+			position: relative;
+			transition: background 250ms ease;
+
+			// Line under the text
+			&::before {
+				background: transparent;
+				content: '';
+				position: absolute;
+				top: 3.3125em;
+				left: ($padding * 0.75);
+				right: ($padding * 0.75);
+				height: 2px;
+				transition: background 250ms ease;
+			}
+		}
+
+		&.current-menu-parent > a {
+			background-color: darken( $bluegray-dk, 4);
+
+			&::before {
+				background: rgba($white, 0.4)
+			}
+		}
+
+		> a:hover,
+		> a:focus,
+		> a[aria-expanded=true],
+		&:focus-within > a,
+		.no-js &:hover > a,
+		.no-js &:focus-within > a {
+			background-color: $red;
+			color: $white;
+
+			&::before {
+				background: rgba($white, 0.4)
+			}
+		}
+	} // .menu > li
+
+	.menu-item-has-children {
 
 		// With JS, the top anchor acts like a toggle and opens the submenu on click
 		// JS is needed to add the proper markup to the menu items
