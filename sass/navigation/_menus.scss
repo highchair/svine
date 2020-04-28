@@ -197,13 +197,17 @@
 		// JS is needed to add the proper markup to the menu items
 		> a {
 
-			&[aria-expanded=false] + .sub-menu {
+			.js & + .sub-menu {
 				visibility: hidden;
 				opacity: 0;
+			}
+
+
+			.js &[aria-expanded=false] + .sub-menu {
 				transition: 500ms opacity ease 0s, 0s visibility linear 500ms;
 			}
 
-			&[aria-expanded=true] + .sub-menu {
+			.js &[aria-expanded=true] + .sub-menu {
 				visibility: visible;
 				opacity: 1;
 				transition: 500ms opacity ease 0s, 0s visibility linear 0s;
