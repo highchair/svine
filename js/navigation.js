@@ -102,35 +102,44 @@
 			self = self.parentElement;
 		}
 	}
+} )();
+
+jQuery(document).ready( function($) {
+
+	// Change a body class to prove that JS is loaded and running
+	$('html').removeClass('no-js').addClass('js');
 
 	/**
-	 * Toggles `focus` class to allow submenu access on tablets.
+	 * Make the Main Menu for Desktop more accessible.
+	 * Add some attributes that we can not easily add via WP menu functions
 	 */
-	( function( container ) {
-		var touchStartFn, i,
-			parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
+	$('.desktop-nav .menu-item-has-children > a').each( function( index ) {
+		$(this).attr('id', 'menu-' + index).attr('role', 'button').attr('aria-haspopup', 'true').attr('aria-expanded', 'false');
+		$(this).siblings('.sub-menu').attr('aria-labelledby', 'menu-' + index);
+	});
 
-		if ( 'ontouchstart' in window ) {
-			touchStartFn = function( e ) {
-				var menuItem = this.parentNode, i;
-
-				if ( ! menuItem.classList.contains( 'focus' ) ) {
-					e.preventDefault();
-					for ( i = 0; i < menuItem.parentNode.children.length; ++i ) {
-						if ( menuItem === menuItem.parentNode.children[i] ) {
-							continue;
-						}
-						menuItem.parentNode.children[i].classList.remove( 'focus' );
-					}
-					menuItem.classList.add( 'focus' );
-				} else {
-					menuItem.classList.remove( 'focus' );
-				}
-			};
-
-			for ( i = 0; i < parentLink.length; ++i ) {
-				parentLink[i].addEventListener( 'touchstart', touchStartFn, false );
-			}
+	/**
+	 * Now, make those child anchors into a toggle for the submenus
+	 */
+	$('.desktop-nav .menu-item-has-children > a').on( "click", function( e ) {
+		// Now open the one that was clicked
+		var expanded = $(this).attr('aria-expanded');
+		if (expanded == 'false') {
+			// Close all other menus
+			$('.desktop-nav .menu-item-has-children > a').each( function() {
+				$(this).attr('aria-expanded', 'false');
+			});
+			// Its currently closed, the click should open this one
+			$(this).attr('aria-expanded', 'true');
 		}
-	}( container ) );
-} )();
+		if (expanded == 'true') {
+			// Close all other menus
+			$('#primary-menu .menu-item-has-children > a').each( function() {
+				$(this).attr('aria-expanded', 'false');
+			});
+			// Its currently open, the click should close this one
+			$(this).attr('aria-expanded', 'false');
+		}
+		e.preventDefault();
+	});
+} );
