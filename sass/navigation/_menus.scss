@@ -132,7 +132,7 @@
 
 	// Without JS, sub-menus appear on hover with a mouse
 	// or when focused with a keyboard
-	.no-js .menu-item .sub-menu, {
+	.no-js .menu-item .sub-menu {
 		visibility: hidden;
 		opacity: 0;
 		transition: none;
@@ -191,46 +191,43 @@
 		}
 	} // .menu > li
 
-	.menu-item-has-children {
+	// With JS, the top anchor acts like a toggle and opens the submenu on click
+	// JS is needed to add the proper markup to the menu items
+	.menu-item-has-children > a {
 
-		// With JS, the top anchor acts like a toggle and opens the submenu on click
-		// JS is needed to add the proper markup to the menu items
-		> a {
-
-			.js & + .sub-menu {
-				visibility: hidden;
-				opacity: 0;
-			}
+		.js & + .sub-menu {
+			visibility: hidden;
+			opacity: 0;
+		}
 
 
-			.js &[aria-expanded=false] + .sub-menu {
-				transition: 500ms opacity ease 0s, 0s visibility linear 500ms;
-			}
+		.js &[aria-expanded=false] + .sub-menu {
+			transition: 500ms opacity ease 0s, 0s visibility linear 500ms;
+		}
 
-			.js &[aria-expanded=true] + .sub-menu {
-				visibility: visible;
-				opacity: 1;
-				transition: 500ms opacity ease 0s, 0s visibility linear 0s;
-			}
+		.js &[aria-expanded=true] + .sub-menu {
+			visibility: visible;
+			opacity: 1;
+			transition: 500ms opacity ease 0s, 0s visibility linear 0s;
+		}
 
-			// triangle/arrow dropdown indicator
-			&::after {
-				border-left: 0.225em solid transparent;
-				border-right: 0.225em solid transparent;
-				border-top: 0.375em solid rgba($silver, 0.5);
-				content: ''; // The aria labels added by JS make it clear that there are child items
-				display: inline-block;
-				width: 0;
-				height: 0;
-				margin-left: 0.25em;
-				overflow: hidden;
-				vertical-align: 0.125em;
-				transition: transform 250ms ease;
-			}
+		// triangle/arrow dropdown indicator
+		&::after {
+			border-left: 0.225em solid transparent;
+			border-right: 0.225em solid transparent;
+			border-top: 0.375em solid rgba($silver, 0.5);
+			content: ''; // The aria labels added by JS make it clear that there are child items
+			display: inline-block;
+			width: 0;
+			height: 0;
+			margin-left: 0.25em;
+			overflow: hidden;
+			vertical-align: 0.125em;
+			transition: transform 250ms ease;
+		}
 
-			&[aria-expanded=true]::after {
-				transform: rotate(180deg);
-			}
+		&[aria-expanded=true]::after {
+			transform: rotate(180deg);
 		}
 	}
 } // .desktop-nav
