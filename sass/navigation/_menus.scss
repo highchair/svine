@@ -132,14 +132,14 @@
 
 	// Without JS, sub-menus appear on hover with a mouse
 	// or when focused with a keyboard
-	.no-js .menu-item .sub-menu {
+	.no-js & .menu-item .sub-menu {
 		visibility: hidden;
 		opacity: 0;
 		transition: none;
 	}
 
-	.no-js .menu-item:hover .sub-menu,
-	.no-js .menu-item:focus-within .sub-menu {
+	.no-js & .menu-item:hover .sub-menu,
+	.no-js & .menu-item:focus-within .sub-menu {
 		visibility: visible;
 		opacity: 1;
 		transition: none;
