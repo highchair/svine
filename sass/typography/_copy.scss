@@ -37,17 +37,6 @@ cite {
 	letter-spacing: 0.03125em;
 	position: relative;
 	text-transform: uppercase;
-
-	&::before {
-		content: '\201C'; // open curly quote
-		display: inline-block;
-		font-family: "Times New Roman", serif;
-		font-size: 2em;
-		height: 1em;
-		margin-right: 0.125em;
-		overflow-y: hidden;
-		vertical-align: -0.265em;
-	}
 }
 
 address {
@@ -108,7 +97,7 @@ small {
 	width: 50vw;
 	max-width: 50%;
 	margin: 2.25rem auto 3rem;
-	
+
 	@media screen and ($large-up) {
 		margin: 4rem auto 5rem;
   }

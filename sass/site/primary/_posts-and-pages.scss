@@ -121,7 +121,7 @@
 		align-content: flex-start;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
+		justify-content: center;
 	}
 
 	.card {
@@ -152,12 +152,12 @@
 // "Snipe" across top corner of cards for "Sold" vehicles
 .card.type-vehicle.tag-sold,
 .tag-sold .entry-content .ngg-gallery-thumbnail {
-	
+
 	a {
 		display: block;
 		position: relative;
 		overflow: hidden;
-		
+
 		&::after {
 			background-color: $yellow;
 			font-size: 1.125rem;
