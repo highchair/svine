@@ -221,10 +221,6 @@
 
 // Single Vehicle
 .single-vehicle .entry-content {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	text-align: center;
 
 	> div,
 	> img,
@@ -232,10 +228,29 @@
 		width: 100%;
 	}
 
-	.ngg-galleryoverview + p, // vehicle description
-	.term-links {
-		margin: $padding;
-		width: 24rem;
+	figure { // large vehicle image
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.term-links span {
+
+		&::after {
+			color: $gray-lt;
+			content: '|';
+			padding-left: $padding / 2;
+			padding-right: $padding / 2;
+		}
+
+		&:last-of-type::after {
+			display: none;
+		}
+	}
+
+	> *:not(.ngg-galleryoverview) {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: $size__site-narrow;
 	}
 
 	p,

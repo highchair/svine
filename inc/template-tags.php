@@ -59,20 +59,20 @@ if ( ! function_exists( 'svine_entry_footer' ) ) :
 
 			echo '<p class="term-links">';
 
-			$location_list = get_the_term_list( $post->ID, 'location', '<strong>Location</strong>: ', ', ', '<br />' );
-			$model_list = get_the_term_list( $post->ID, 'model', '<strong>Model</strong>: ', ', ', '<br />' );
+			$location_list = get_the_term_list( $post->ID, 'location', '<strong>Location</strong>: ', ', ' );
+			$model_list = get_the_term_list( $post->ID, 'model', '<strong>Model</strong>: ', ', ' );
 			$tag_list = get_the_tag_list( '<strong>Tags</strong>: ', ', ' );
 
 			if ( $location_list ) {
-				echo $location_list;
+				echo '<span>' . $location_list . '</span>';
 			}
 
 			if ( $model_list ) {
-				echo $model_list;
+				echo '<span>' . $model_list . '</span>';
 			}
 
 			if ( $tag_list ) {
-				echo $tag_list;
+				echo '<span>' . $tag_list . '</span>';
 			}
 
 			echo '</p>';
