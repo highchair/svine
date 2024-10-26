@@ -96,6 +96,7 @@
 
 	.link {
 		color: $bluegray-dk;
+		outline-offset: 2px;
 		text-decoration: none;
 	}
 
@@ -299,9 +300,18 @@
 		color: $bluegray;
 	}
 
+	// featured image up top
+	> p:first-child a {
+		display: block;
+	}
+
 	a:hover,
 	a:focus {
 		color: $black;
+	}
+
+	a:focus {
+		outline-offset: 2px;
 	}
 }
 

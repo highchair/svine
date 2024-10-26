@@ -5,19 +5,15 @@
 
 .site-branding {
 	flex: 1;
+	outline-offset: 2px;
 	margin: 0;
 
-	/*a*/.logo {
+	.logo {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		height: 100%;
 		width: 14rem;
-
-		&:focus {
-			outline: 2px solid $cream;
-			outline-offset: -2px;
-		}
 
 		@media screen and ($xlarge-up) {
 			width: 24rem;

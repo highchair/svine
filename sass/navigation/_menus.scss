@@ -279,14 +279,8 @@
 		border-bottom: 1px solid transparent;
 		color: $white;
 		display: inline-block;
-		margin-left: $padding * 1.5;
-		padding-top: 0.25em;
-		padding-bottom: 0.25em;
-
-		&:hover,
-		&:focus {
-			border-color: rgba($white, 0.4);
-		}
+		margin-left: $padding;
+		padding: 0.25em;
 	}
 }
 
@@ -411,6 +405,10 @@
 		background: $color__link;
 		border-color: $color__link;
 		color: $white;
+	}
+
+	&:focus {
+		outline-color: $bluegray-dk;
 	}
 
 	+ .page-numbers {
