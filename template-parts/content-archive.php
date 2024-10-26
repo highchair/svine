@@ -10,21 +10,17 @@
 ?>
 
 <article <?php post_class('card'); ?>>
-	<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-		<?php
-		if ( 'vehicle' === get_post_type() ) {
-			svine_post_thumbnail( 'medium_large' );
-		}
+	<?php
+	if ( 'vehicle' === get_post_type() ) {
+		svine_post_thumbnail( 'medium_large' );
+	}
+	echo '<a class="link" href="' . get_the_permalink() . '"><h3 class="h4">' . get_the_title() . '</h3></a>';
+	if ( is_home() ) {
+		svine_post_thumbnail( 'medium_wide' );
+	}
 
-		the_title( '<h3 class="h4">', '</h3>' );
-
-		if ( is_home() ) {
-			svine_post_thumbnail( 'medium_wide' );
-		}
-
-		if ( is_home() ) {
-			the_excerpt();
-		}
-		?>
-	</a>
+	if ( is_home() ) {
+		the_excerpt();
+	}
+	?>
 </article>
