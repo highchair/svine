@@ -120,10 +120,9 @@ if ( ! function_exists( 'svine_post_thumbnail' ) ) :
 
 		<?php
 		else :
+			// use an empty alt attribute on archive pages
 			the_post_thumbnail( $size, array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				) ),
+				'alt' => ''
 			) );
 		endif;
 	}
