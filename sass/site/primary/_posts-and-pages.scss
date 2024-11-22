@@ -83,9 +83,9 @@
 }
 
 // Cards
-.card,
-.rpwe-li {
+.card {
 	margin-bottom: $padding;
+	position: relative;
 	h3 {
 		color: $bluegray;
 		line-height: 1em;
@@ -94,19 +94,52 @@
 		transition: all 0.15s;
 	}
 
-	a {
+	.link {
 		color: $bluegray-dk;
+		outline-offset: 2px;
 		text-decoration: none;
+	}
+
+	// spread clickable area over entire card
+	.link::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
 	}
 
 	img {
 		display: block;
 	}
 
-	&:hover,
-	&:focus {
-		h3,
-		a {
+	&:hover {
+		h3 {
+			color: $black;
+		}
+		img {
+			border-color: $black;
+		}
+	}
+}
+
+.rpwe-li {
+	margin-bottom: $padding;
+	.rpwe-title {
+		color: $bluegray;
+		line-height: 1em;
+		margin-top: $padding / 2;
+		margin-bottom: 0.25em;
+		transition: all 0.15s;
+	}
+
+	img {
+		display: block;
+	}
+
+	&:hover {
+		.rpwe-title {
 			color: $black;
 		}
 	}
@@ -267,9 +300,18 @@
 		color: $bluegray;
 	}
 
+	// featured image up top
+	> p:first-child a {
+		display: block;
+	}
+
 	a:hover,
 	a:focus {
 		color: $black;
+	}
+
+	a:focus {
+		outline-offset: 2px;
 	}
 }
 

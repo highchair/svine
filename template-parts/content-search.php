@@ -10,22 +10,20 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>
-	<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+	<?php
+	if ( 'vehicle' === get_post_type() ) {
+		svine_post_thumbnail( 'medium' );
+	}
+	?>
+	<div>
 		<?php
-		if ( 'vehicle' === get_post_type() ) {
-			svine_post_thumbnail( 'medium' );
-		}
+		echo '<a class="link" href="' . get_the_permalink() . '"><h3 class="h4">' . get_the_title() . '</h3></a>';
+
+		if ( 'post' === get_post_type() ) :
+			echo svine_posted_on() . ' – ';
+		endif;
+
+		the_excerpt();
 		?>
-		<div>
-			<?php
-			the_title( '<h3 class="h4">', '</h3>' );
-
-			if ( 'post' === get_post_type() ) :
-				echo svine_posted_on() . ' – ';
-			endif;
-
-			the_excerpt();
-			?>
-		</div>
-	</a>
+	</div>
 </article><!-- #post-<?php the_ID(); ?> -->
