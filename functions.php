@@ -232,3 +232,8 @@ function svine_cpt_tags_archive( $query ) {
   }
 }
 add_filter( 'pre_get_posts', 'svine_cpt_tags_archive' );
+
+/**
+ * Include the custom Lightbox Gallery plugin
+ */
+require get_template_directory() . '/blocks/hcd-lightbox-gallery/hcd-lightbox-gallery-functions.php';
